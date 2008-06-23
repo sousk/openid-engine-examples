@@ -28427,3 +28427,826 @@ REQUEST_METHOD::GET
   [4;36;1mUser Load (0.000321)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) [0m
 Rendering users/xrds.xml.erb
 Completed in 0.01177 (84 reqs/sec) | Rendering: 0.00087 (7%) | DB: 0.00032 (2%) | 200 OK [http://localhost/users/1]
+  [4;36;1mSQL (0.000425)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;35;1mSQL (0.000220)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000167)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000203)[0m   [0mSELECT * FROM schema_info[0m
+  [4;36;1mSQL (0.000278)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000060)[0m   [0mPRAGMA index_list(openid_associations)[0m
+  [4;36;1mSQL (0.000058)[0m   [0;1mPRAGMA index_list(users)[0m
+
+
+Processing ServersController#show (for 127.0.0.1 at 2008-06-23 15:39:39) [GET]
+  Session ID: 3d48f125e7adea1ae5d7c5009d63dcb3
+  Parameters: {"action"=>"show", "controller"=>"servers"}
+--
+SERVER_NAME::localhost
+PATH_INFO::/server
+HTTP_USER_AGENT::Ruby-OpenidEngine
+SCRIPT_NAME::/
+SERVER_PROTOCOL::HTTP/1.1
+HTTP_HOST::localhost:3000
+REMOTE_ADDR::127.0.0.1
+SERVER_SOFTWARE::Mongrel 1.1.5
+REQUEST_PATH::/server
+HTTP_VERSION::HTTP/1.1
+REQUEST_URI::/server
+SERVER_PORT::3000
+GATEWAY_INTERFACE::CGI/1.2
+HTTP_ACCEPT::application/xrds+xml
+REQUEST_METHOD::GET
+--
+Rendering servers/xrds.xml.erb
+Completed in 0.00497 (201 reqs/sec) | Rendering: 0.00167 (33%) | DB: 0.00000 (0%) | 200 OK [http://localhost/server]
+
+
+Processing ServersController#show (for 127.0.0.1 at 2008-06-23 15:39:39) [GET]
+  Session ID: 82974233bc9dc199074add19d41b6bf6
+  Parameters: {"action"=>"show", "controller"=>"servers"}
+--
+SERVER_NAME::localhost
+PATH_INFO::/server
+HTTP_USER_AGENT::Ruby-OpenidEngine
+SCRIPT_NAME::/
+SERVER_PROTOCOL::HTTP/1.1
+HTTP_HOST::localhost:3000
+REMOTE_ADDR::127.0.0.1
+SERVER_SOFTWARE::Mongrel 1.1.5
+REQUEST_PATH::/server
+HTTP_VERSION::HTTP/1.1
+REQUEST_URI::/server
+SERVER_PORT::3000
+GATEWAY_INTERFACE::CGI/1.2
+HTTP_ACCEPT::application/xrds+xml
+REQUEST_METHOD::GET
+--
+Rendering servers/xrds.xml.erb
+Completed in 0.00381 (262 reqs/sec) | Rendering: 0.00066 (17%) | DB: 0.00000 (0%) | 200 OK [http://localhost/server]
+
+
+Processing ServersController#show (for 127.0.0.1 at 2008-06-23 15:39:39) [GET]
+  Session ID: 41e00be794c3339e3ead1f511835b6ba
+  Parameters: {"openid.return_to"=>"http://localhost:8080/session", "openid.mode"=>"checkid_setup", "openid.claimed_id"=>"http://specs.openid.net/auth/2.0/identifier_select", "openid.ns"=>"http://specs.openid.net/auth/2.0", "action"=>"show", "controller"=>"servers", "openid.identity"=>"http://specs.openid.net/auth/2.0/identifier_select", "openid.assoc_handle"=>"{HMAC-SHA256}{48339560}{2+ByUg==}", "openid.realm"=>"http://localhost:8080/session"}
+--
+SERVER_NAME::localhost
+PATH_INFO::/server
+HTTP_ACCEPT_ENCODING::gzip, deflate
+HTTP_USER_AGENT::Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_5_3; en-us) AppleWebKit/526.1+ (KHTML, like Gecko) Version/3.1.1 Safari/525.20
+SCRIPT_NAME::/
+SERVER_PROTOCOL::HTTP/1.1
+HTTP_HOST::localhost:3000
+HTTP_ACCEPT_LANGUAGE::en-us
+REMOTE_ADDR::127.0.0.1
+SERVER_SOFTWARE::Mongrel 1.1.5
+REQUEST_PATH::/server
+HTTP_REFERER::http://localhost:8080/session/new
+HTTP_COOKIE::_openid2_session=BAh7CDoMY3NyZl9pZCIlMzI4YmQ3M2U2MWNjOTQ4MjIyOTU3ZTU3Y2QzNDdm%250AN2E6HGxhc3RfcmVxdWVzdGVkX2VuZHBvaW50IiFodHRwOi8vbG9jYWxob3N0%250AOjMwMDAvc2VydmVyIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFz%250AaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--21f40c05882f426f8ffa7763f46e8b3b38d83449
+HTTP_VERSION::HTTP/1.1
+REQUEST_URI::/server?openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.mode=checkid_setup&openid.assoc_handle=%7BHMAC-SHA256%7D%7B48339560%7D%7B2%2BByUg%3D%3D%7D&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.return_to=http%3A%2F%2Flocalhost%3A8080%2Fsession&openid.realm=http%3A%2F%2Flocalhost%3A8080%2Fsession
+SERVER_PORT::3000
+GATEWAY_INTERFACE::CGI/1.2
+QUERY_STRING::openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.mode=checkid_setup&openid.assoc_handle=%7BHMAC-SHA256%7D%7B48339560%7D%7B2%2BByUg%3D%3D%7D&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.return_to=http%3A%2F%2Flocalhost%3A8080%2Fsession&openid.realm=http%3A%2F%2Flocalhost%3A8080%2Fsession
+HTTP_ACCEPT::text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+HTTP_CONNECTION::keep-alive
+REQUEST_METHOD::GET
+--
+  [4;36;1mOpenidAssociation Load (0.000269)[0m   [0;1mSELECT * FROM openid_associations WHERE (openid_associations."handle" = '{HMAC-SHA256}{48339560}{2+ByUg==}') LIMIT 1[0m
+
+
+RuntimeError (assoc missing):
+    /vendor/plugins/openid_engine/lib/openid_engine/acts_as_op.rb:20:in `process_authentication_request'
+    /vendor/plugins/openid_engine/lib/openid_engine/acts_as_op.rb:9:in `process_indirect_communication'
+    /app/controllers/servers_controller.rb:38:in `openid_authentication'
+    /app/controllers/servers_controller.rb:12:in `show'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1158:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1158:in `perform_action_without_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:76:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/servers/mongrel.rb:64
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/server.rb:39
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    ./script/server:3
+
+Rendering /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing ServersController#show (for 127.0.0.1 at 2008-06-23 15:39:42) [GET]
+  Session ID: c3966a8c171e05e6c7e6c74e7137520f
+  Parameters: {"action"=>"show", "controller"=>"servers"}
+--
+SERVER_NAME::localhost
+PATH_INFO::/server
+HTTP_USER_AGENT::Ruby-OpenidEngine
+SCRIPT_NAME::/
+SERVER_PROTOCOL::HTTP/1.1
+HTTP_HOST::localhost:3000
+REMOTE_ADDR::127.0.0.1
+SERVER_SOFTWARE::Mongrel 1.1.5
+REQUEST_PATH::/server
+HTTP_VERSION::HTTP/1.1
+REQUEST_URI::/server
+SERVER_PORT::3000
+GATEWAY_INTERFACE::CGI/1.2
+HTTP_ACCEPT::application/xrds+xml
+REQUEST_METHOD::GET
+--
+Rendering servers/xrds.xml.erb
+Completed in 0.00396 (252 reqs/sec) | Rendering: 0.00068 (17%) | DB: 0.00000 (0%) | 200 OK [http://localhost/server]
+
+
+Processing ServersController#show (for 127.0.0.1 at 2008-06-23 15:39:42) [GET]
+  Session ID: b0530c1f03652d6600162ac9103b61c5
+  Parameters: {"action"=>"show", "controller"=>"servers"}
+--
+SERVER_NAME::localhost
+PATH_INFO::/server
+HTTP_USER_AGENT::Ruby-OpenidEngine
+SCRIPT_NAME::/
+SERVER_PROTOCOL::HTTP/1.1
+HTTP_HOST::localhost:3000
+REMOTE_ADDR::127.0.0.1
+SERVER_SOFTWARE::Mongrel 1.1.5
+REQUEST_PATH::/server
+HTTP_VERSION::HTTP/1.1
+REQUEST_URI::/server
+SERVER_PORT::3000
+GATEWAY_INTERFACE::CGI/1.2
+HTTP_ACCEPT::application/xrds+xml
+REQUEST_METHOD::GET
+--
+Rendering servers/xrds.xml.erb
+Completed in 0.00410 (243 reqs/sec) | Rendering: 0.00080 (19%) | DB: 0.00000 (0%) | 200 OK [http://localhost/server]
+
+
+Processing ServersController#show (for 127.0.0.1 at 2008-06-23 15:39:42) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--0dc4f00aee925351bd20c1356502818a2ea3c582
+  Parameters: {"openid.return_to"=>"http://localhost:8080/session", "openid.mode"=>"checkid_setup", "openid.claimed_id"=>"http://specs.openid.net/auth/2.0/identifier_select", "openid.ns"=>"http://specs.openid.net/auth/2.0", "action"=>"show", "controller"=>"servers", "openid.identity"=>"http://specs.openid.net/auth/2.0/identifier_select", "openid.assoc_handle"=>"{HMAC-SHA256}{48339560}{2+ByUg==}", "openid.realm"=>"http://localhost:8080/session"}
+--
+SERVER_NAME::localhost
+PATH_INFO::/server
+HTTP_ACCEPT_ENCODING::gzip, deflate
+HTTP_USER_AGENT::Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_5_3; en-us) AppleWebKit/526.1+ (KHTML, like Gecko) Version/3.1.1 Safari/525.20
+SCRIPT_NAME::/
+SERVER_PROTOCOL::HTTP/1.1
+HTTP_HOST::localhost:3000
+HTTP_ACCEPT_LANGUAGE::en-us
+REMOTE_ADDR::127.0.0.1
+SERVER_SOFTWARE::Mongrel 1.1.5
+REQUEST_PATH::/server
+HTTP_REFERER::http://localhost:8080/session/new
+HTTP_COOKIE::_openid2_session=BAh7CDoMY3NyZl9pZCIlMzI4YmQ3M2U2MWNjOTQ4MjIyOTU3ZTU3Y2QzNDdm%250AN2E6HGxhc3RfcmVxdWVzdGVkX2VuZHBvaW50IiFodHRwOi8vbG9jYWxob3N0%250AOjMwMDAvc2VydmVyIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFz%250AaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--21f40c05882f426f8ffa7763f46e8b3b38d83449; _op_session=BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%250ASGFzaHsABjoKQHVzZWR7AA%253D%253D--0dc4f00aee925351bd20c1356502818a2ea3c582
+HTTP_VERSION::HTTP/1.1
+REQUEST_URI::/server?openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.mode=checkid_setup&openid.assoc_handle=%7BHMAC-SHA256%7D%7B48339560%7D%7B2%2BByUg%3D%3D%7D&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.return_to=http%3A%2F%2Flocalhost%3A8080%2Fsession&openid.realm=http%3A%2F%2Flocalhost%3A8080%2Fsession
+SERVER_PORT::3000
+GATEWAY_INTERFACE::CGI/1.2
+QUERY_STRING::openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.mode=checkid_setup&openid.assoc_handle=%7BHMAC-SHA256%7D%7B48339560%7D%7B2%2BByUg%3D%3D%7D&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.return_to=http%3A%2F%2Flocalhost%3A8080%2Fsession&openid.realm=http%3A%2F%2Flocalhost%3A8080%2Fsession
+HTTP_ACCEPT::text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+HTTP_CONNECTION::keep-alive
+REQUEST_METHOD::GET
+--
+  [4;35;1mOpenidAssociation Load (0.000231)[0m   [0mSELECT * FROM openid_associations WHERE (openid_associations."handle" = '{HMAC-SHA256}{48339560}{2+ByUg==}') LIMIT 1[0m
+
+
+RuntimeError (assoc missing):
+    /vendor/plugins/openid_engine/lib/openid_engine/acts_as_op.rb:20:in `process_authentication_request'
+    /vendor/plugins/openid_engine/lib/openid_engine/acts_as_op.rb:9:in `process_indirect_communication'
+    /app/controllers/servers_controller.rb:38:in `openid_authentication'
+    /app/controllers/servers_controller.rb:12:in `show'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1158:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1158:in `perform_action_without_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:76:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/servers/mongrel.rb:64
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/server.rb:39
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    ./script/server:3
+
+Rendering /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing ServersController#show (for 127.0.0.1 at 2008-06-23 15:39:44) [GET]
+  Session ID: eba869fd0b789f3d3fe7ae24eeab5b92
+  Parameters: {"action"=>"show", "controller"=>"servers"}
+--
+SERVER_NAME::localhost
+PATH_INFO::/server
+HTTP_USER_AGENT::Ruby-OpenidEngine
+SCRIPT_NAME::/
+SERVER_PROTOCOL::HTTP/1.1
+HTTP_HOST::localhost:3000
+REMOTE_ADDR::127.0.0.1
+SERVER_SOFTWARE::Mongrel 1.1.5
+REQUEST_PATH::/server
+HTTP_VERSION::HTTP/1.1
+REQUEST_URI::/server
+SERVER_PORT::3000
+GATEWAY_INTERFACE::CGI/1.2
+HTTP_ACCEPT::application/xrds+xml
+REQUEST_METHOD::GET
+--
+Rendering servers/xrds.xml.erb
+Completed in 0.00384 (260 reqs/sec) | Rendering: 0.00067 (17%) | DB: 0.00000 (0%) | 200 OK [http://localhost/server]
+
+
+Processing ServersController#show (for 127.0.0.1 at 2008-06-23 15:39:44) [GET]
+  Session ID: f1b97eb53c9cbef04a14b859e90003a6
+  Parameters: {"action"=>"show", "controller"=>"servers"}
+--
+SERVER_NAME::localhost
+PATH_INFO::/server
+HTTP_USER_AGENT::Ruby-OpenidEngine
+SCRIPT_NAME::/
+SERVER_PROTOCOL::HTTP/1.1
+HTTP_HOST::localhost:3000
+REMOTE_ADDR::127.0.0.1
+SERVER_SOFTWARE::Mongrel 1.1.5
+REQUEST_PATH::/server
+HTTP_VERSION::HTTP/1.1
+REQUEST_URI::/server
+SERVER_PORT::3000
+GATEWAY_INTERFACE::CGI/1.2
+HTTP_ACCEPT::application/xrds+xml
+REQUEST_METHOD::GET
+--
+Rendering servers/xrds.xml.erb
+Completed in 0.00391 (255 reqs/sec) | Rendering: 0.00067 (17%) | DB: 0.00000 (0%) | 200 OK [http://localhost/server]
+
+
+Processing ServersController#show (for 127.0.0.1 at 2008-06-23 15:39:44) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--0dc4f00aee925351bd20c1356502818a2ea3c582
+  Parameters: {"openid.return_to"=>"http://localhost:8080/session", "openid.mode"=>"checkid_setup", "openid.claimed_id"=>"http://specs.openid.net/auth/2.0/identifier_select", "openid.ns"=>"http://specs.openid.net/auth/2.0", "action"=>"show", "controller"=>"servers", "openid.identity"=>"http://specs.openid.net/auth/2.0/identifier_select", "openid.assoc_handle"=>"{HMAC-SHA256}{48339560}{2+ByUg==}", "openid.realm"=>"http://localhost:8080/session"}
+--
+SERVER_NAME::localhost
+PATH_INFO::/server
+HTTP_ACCEPT_ENCODING::gzip, deflate
+HTTP_USER_AGENT::Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_5_3; en-us) AppleWebKit/526.1+ (KHTML, like Gecko) Version/3.1.1 Safari/525.20
+SCRIPT_NAME::/
+SERVER_PROTOCOL::HTTP/1.1
+HTTP_HOST::localhost:3000
+HTTP_ACCEPT_LANGUAGE::en-us
+REMOTE_ADDR::127.0.0.1
+SERVER_SOFTWARE::Mongrel 1.1.5
+REQUEST_PATH::/server
+HTTP_REFERER::http://localhost:8080/session/new
+HTTP_COOKIE::_openid2_session=BAh7CDoMY3NyZl9pZCIlMzI4YmQ3M2U2MWNjOTQ4MjIyOTU3ZTU3Y2QzNDdm%250AN2E6HGxhc3RfcmVxdWVzdGVkX2VuZHBvaW50IiFodHRwOi8vbG9jYWxob3N0%250AOjMwMDAvc2VydmVyIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFz%250AaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--21f40c05882f426f8ffa7763f46e8b3b38d83449; _op_session=BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%250ASGFzaHsABjoKQHVzZWR7AA%253D%253D--0dc4f00aee925351bd20c1356502818a2ea3c582
+HTTP_VERSION::HTTP/1.1
+REQUEST_URI::/server?openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.mode=checkid_setup&openid.assoc_handle=%7BHMAC-SHA256%7D%7B48339560%7D%7B2%2BByUg%3D%3D%7D&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.return_to=http%3A%2F%2Flocalhost%3A8080%2Fsession&openid.realm=http%3A%2F%2Flocalhost%3A8080%2Fsession
+SERVER_PORT::3000
+GATEWAY_INTERFACE::CGI/1.2
+QUERY_STRING::openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.mode=checkid_setup&openid.assoc_handle=%7BHMAC-SHA256%7D%7B48339560%7D%7B2%2BByUg%3D%3D%7D&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.return_to=http%3A%2F%2Flocalhost%3A8080%2Fsession&openid.realm=http%3A%2F%2Flocalhost%3A8080%2Fsession
+HTTP_ACCEPT::text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+HTTP_CONNECTION::keep-alive
+REQUEST_METHOD::GET
+--
+  [4;36;1mOpenidAssociation Load (0.000286)[0m   [0;1mSELECT * FROM openid_associations WHERE (openid_associations."handle" = '{HMAC-SHA256}{48339560}{2+ByUg==}') LIMIT 1[0m
+
+
+RuntimeError (assoc missing):
+    /vendor/plugins/openid_engine/lib/openid_engine/acts_as_op.rb:20:in `process_authentication_request'
+    /vendor/plugins/openid_engine/lib/openid_engine/acts_as_op.rb:9:in `process_indirect_communication'
+    /app/controllers/servers_controller.rb:38:in `openid_authentication'
+    /app/controllers/servers_controller.rb:12:in `show'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1158:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1158:in `perform_action_without_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:76:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/servers/mongrel.rb:64
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/server.rb:39
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    ./script/server:3
+
+Rendering /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+  [4;36;1mSQL (0.000500)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: no such table: openid_associations: DROP TABLE openid_associations[0m
+  [4;36;1mSQL (0.001553)[0m   [0;1mCREATE TABLE openid_associations ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "handle" varchar(255) DEFAULT NULL, "encryption_type" varchar(255) DEFAULT NULL, "lifetime" integer DEFAULT NULL, "secret" blob DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: no such table: users: DROP TABLE users[0m
+  [4;36;1mSQL (0.001779)[0m   [0;1mCREATE TABLE users ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255) DEFAULT NULL, "email" varchar(255) DEFAULT NULL, "crypted_password" varchar(40) DEFAULT NULL, "salt" varchar(40) DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL, "remember_token" varchar(255) DEFAULT NULL, "remember_token_expires_at" datetime DEFAULT NULL) [0m
+  [4;35;1mSQL (0.001552)[0m   [0mCREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.001015)[0m   [0;1mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;35;1mSQL (0.017083)[0m   [0mUPDATE schema_info SET version = 2[0m
+
+
+Processing ServersController#show (for 127.0.0.1 at 2008-06-23 15:47:14) [GET]
+  Session ID: 528fe2eafc187eb5bff2c7fab3e4fa5f
+  Parameters: {"action"=>"show", "controller"=>"servers"}
+--
+SERVER_NAME::localhost
+PATH_INFO::/server
+HTTP_USER_AGENT::Ruby-OpenidEngine
+SCRIPT_NAME::/
+SERVER_PROTOCOL::HTTP/1.1
+HTTP_HOST::localhost:3000
+REMOTE_ADDR::127.0.0.1
+SERVER_SOFTWARE::Mongrel 1.1.5
+REQUEST_PATH::/server
+HTTP_VERSION::HTTP/1.1
+REQUEST_URI::/server
+SERVER_PORT::3000
+GATEWAY_INTERFACE::CGI/1.2
+HTTP_ACCEPT::application/xrds+xml
+REQUEST_METHOD::GET
+--
+Rendering servers/xrds.xml.erb
+Completed in 0.00492 (203 reqs/sec) | Rendering: 0.00168 (34%) | DB: 0.00000 (0%) | 200 OK [http://localhost/server]
+
+
+Processing ServersController#show (for 127.0.0.1 at 2008-06-23 15:47:14) [GET]
+  Session ID: 2e02a1c5f731ccd2f926f3de9ba9f252
+  Parameters: {"action"=>"show", "controller"=>"servers"}
+--
+SERVER_NAME::localhost
+PATH_INFO::/server
+HTTP_USER_AGENT::Ruby-OpenidEngine
+SCRIPT_NAME::/
+SERVER_PROTOCOL::HTTP/1.1
+HTTP_HOST::localhost:3000
+REMOTE_ADDR::127.0.0.1
+SERVER_SOFTWARE::Mongrel 1.1.5
+REQUEST_PATH::/server
+HTTP_VERSION::HTTP/1.1
+REQUEST_URI::/server
+SERVER_PORT::3000
+GATEWAY_INTERFACE::CGI/1.2
+HTTP_ACCEPT::application/xrds+xml
+REQUEST_METHOD::GET
+--
+Rendering servers/xrds.xml.erb
+Completed in 0.00406 (246 reqs/sec) | Rendering: 0.00071 (17%) | DB: 0.00000 (0%) | 200 OK [http://localhost/server]
+
+
+Processing ServersController#create (for 127.0.0.1 at 2008-06-23 15:47:14) [POST]
+  Session ID: b0bf36824a1aea8c6e3dba031cf0fab1
+  Parameters: {"openid.mode"=>"associate", "openid.session_type"=>"DH-SHA256", "openid.dh_gen"=>"Ag==", "openid.assoc_type"=>"HMAC-SHA256", "openid.ns"=>"http://specs.openid.net/auth/2.0", "openid.dh_consumer_public"=>"TbmuSMCP4votD7dX7TlkVQ2oMHlFGD5cqLDubJ0TDPt02og9LTDnRKFjDD1O\nGc/TobyIZOEggaDI4tlfVpEh9IZVZbtXxDXGwRWIvqomv8LrLx3FEgc/b0LG\n4scvU7SzpnT6e8lz0rH9NXGDs0cMssuaJbelS+WYlZGPYEaDYhE=", "action"=>"create", "openid.dh_modulus"=>"ANz5OguIOXLsDhmYmsWizjEOHTdxfo2Vcbt2I3MYZuYe91ouJ4mLBX+YkcLi\nemOcPym2CBRYHNOyyjmG0mg3BVd9RcLn5S3IHHoXGHblzqdLFEi/368Ygo79\nJRnxTkXjgmY0rxlJ5bU1zIKaSDuKdiI+XUkKJX8Fvf8W8vsixYOr", "controller"=>"servers"}
+--
+SERVER_NAME::localhost
+PATH_INFO::/server
+CONTENT_LENGTH::573
+HTTP_USER_AGENT::Ruby-OpenidEngine
+HTTP_CONTENT_TYPE::application/x-www-form-urlencoded
+SCRIPT_NAME::/
+SERVER_PROTOCOL::HTTP/1.1
+HTTP_HOST::localhost:3000
+REMOTE_ADDR::127.0.0.1
+SERVER_SOFTWARE::Mongrel 1.1.5
+HTTP_CONTENT_LENGTH::573
+REQUEST_PATH::/server
+CONTENT_TYPE::application/x-www-form-urlencoded
+HTTP_VERSION::HTTP/1.1
+REQUEST_URI::/server?openid.dh_gen=Ag%3D%3D&openid.assoc_type=HMAC-SHA256&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.dh_consumer_public=TbmuSMCP4votD7dX7TlkVQ2oMHlFGD5cqLDubJ0TDPt02og9LTDnRKFjDD1O%0AGc%2FTobyIZOEggaDI4tlfVpEh9IZVZbtXxDXGwRWIvqomv8LrLx3FEgc%2Fb0LG%0A4scvU7SzpnT6e8lz0rH9NXGDs0cMssuaJbelS%2BWYlZGPYEaDYhE%3D&openid.session_type=DH-SHA256&openid.mode=associate&openid.dh_modulus=ANz5OguIOXLsDhmYmsWizjEOHTdxfo2Vcbt2I3MYZuYe91ouJ4mLBX%2BYkcLi%0AemOcPym2CBRYHNOyyjmG0mg3BVd9RcLn5S3IHHoXGHblzqdLFEi%2F368Ygo79%0AJRnxTkXjgmY0rxlJ5bU1zIKaSDuKdiI%2BXUkKJX8Fvf8W8vsixYOr
+RAW_POST_DATA::openid.dh_gen=Ag%3D%3D&openid.assoc_type=HMAC-SHA256&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.dh_consumer_public=TbmuSMCP4votD7dX7TlkVQ2oMHlFGD5cqLDubJ0TDPt02og9LTDnRKFjDD1O%0AGc%2FTobyIZOEggaDI4tlfVpEh9IZVZbtXxDXGwRWIvqomv8LrLx3FEgc%2Fb0LG%0A4scvU7SzpnT6e8lz0rH9NXGDs0cMssuaJbelS%2BWYlZGPYEaDYhE%3D&openid.session_type=DH-SHA256&openid.mode=associate&openid.dh_modulus=ANz5OguIOXLsDhmYmsWizjEOHTdxfo2Vcbt2I3MYZuYe91ouJ4mLBX%2BYkcLi%0AemOcPym2CBRYHNOyyjmG0mg3BVd9RcLn5S3IHHoXGHblzqdLFEi%2F368Ygo79%0AJRnxTkXjgmY0rxlJ5bU1zIKaSDuKdiI%2BXUkKJX8Fvf8W8vsixYOr
+SERVER_PORT::3000
+GATEWAY_INTERFACE::CGI/1.2
+QUERY_STRING::openid.dh_gen=Ag%3D%3D&openid.assoc_type=HMAC-SHA256&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.dh_consumer_public=TbmuSMCP4votD7dX7TlkVQ2oMHlFGD5cqLDubJ0TDPt02og9LTDnRKFjDD1O%0AGc%2FTobyIZOEggaDI4tlfVpEh9IZVZbtXxDXGwRWIvqomv8LrLx3FEgc%2Fb0LG%0A4scvU7SzpnT6e8lz0rH9NXGDs0cMssuaJbelS%2BWYlZGPYEaDYhE%3D&openid.session_type=DH-SHA256&openid.mode=associate&openid.dh_modulus=ANz5OguIOXLsDhmYmsWizjEOHTdxfo2Vcbt2I3MYZuYe91ouJ4mLBX%2BYkcLi%0AemOcPym2CBRYHNOyyjmG0mg3BVd9RcLn5S3IHHoXGHblzqdLFEi%2F368Ygo79%0AJRnxTkXjgmY0rxlJ5bU1zIKaSDuKdiI%2BXUkKJX8Fvf8W8vsixYOr
+HTTP_ACCEPT::*/*
+REQUEST_METHOD::POST
+--
+  [4;36;1mOpenidAssociation Create (0.000593)[0m   [0;1mINSERT INTO openid_associations ("handle", "updated_at", "lifetime", "encryption_type", "secret", "created_at") VALUES('{HMAC-SHA256}{485f46f2}{GviD4A==}', '2008-06-23 15:47:14', 3, 'HMAC-SHA256', 'g©ÿþÝÄž©`µW•B¨I«¶Òb3²7F¦~*', '2008-06-23 15:47:14')[0m
+::assoc-response:: session_type => DH-SHA256
+::assoc-response:: expires_in => 3
+::assoc-response:: dh_server_public => AKhLNpIvPudiBUVBITestWyhEfW5GAiBEuHQXSh/mnt/k07q4NYstUHt9X+MRrOCtmiGoLwWRAVuDys93mIhUxH77uMPsg4cnHBFg/Ujh6/wotGAVFm/hdxpqiw10pXqo2qY0KATgqT7jQ5DvEUsIEkviPBgMrJM+JmcQQybLiyA
+::assoc-response:: enc_mac_key => 4/5LHdxcPCSb/tvdN8uNqlrsLbQdcO+QkBqbwwMMuZ4=
+::assoc-response:: assoc_type => HMAC-SHA256
+::assoc-response:: assoc_handle => {HMAC-SHA256}{485f46f2}{GviD4A==}
+Completed in 0.11279 (8 reqs/sec) | Rendering: 0.00008 (0%) | DB: 0.00059 (0%) | 200 OK [http://localhost/server?openid.dh_gen=Ag%3D%3D&openid.assoc_type=HMAC-SHA256&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.dh_consumer_public=TbmuSMCP4votD7dX7TlkVQ2oMHlFGD5cqLDubJ0TDPt02og9LTDnRKFjDD1O%0AGc%2FTobyIZOEggaDI4tlfVpEh9IZVZbtXxDXGwRWIvqomv8LrLx3FEgc%2Fb0LG%0A4scvU7SzpnT6e8lz0rH9NXGDs0cMssuaJbelS%2BWYlZGPYEaDYhE%3D&openid.session_type=DH-SHA256&openid.mode=associate&openid.dh_modulus=ANz5OguIOXLsDhmYmsWizjEOHTdxfo2Vcbt2I3MYZuYe91ouJ4mLBX%2BYkcLi%0AemOcPym2CBRYHNOyyjmG0mg3BVd9RcLn5S3IHHoXGHblzqdLFEi%2F368Ygo79%0AJRnxTkXjgmY0rxlJ5bU1zIKaSDuKdiI%2BXUkKJX8Fvf8W8vsixYOr]
+
+
+Processing ServersController#show (for 127.0.0.1 at 2008-06-23 15:47:15) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--0dc4f00aee925351bd20c1356502818a2ea3c582
+  Parameters: {"openid.return_to"=>"http://localhost:8080/session", "openid.mode"=>"checkid_setup", "openid.claimed_id"=>"http://specs.openid.net/auth/2.0/identifier_select", "openid.ns"=>"http://specs.openid.net/auth/2.0", "action"=>"show", "controller"=>"servers", "openid.identity"=>"http://specs.openid.net/auth/2.0/identifier_select", "openid.assoc_handle"=>"{HMAC-SHA256}{485f46f2}{GviD4A==}", "openid.realm"=>"http://localhost:8080/session"}
+--
+SERVER_NAME::localhost
+PATH_INFO::/server
+HTTP_ACCEPT_ENCODING::gzip, deflate
+HTTP_USER_AGENT::Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_5_3; en-us) AppleWebKit/526.1+ (KHTML, like Gecko) Version/3.1.1 Safari/525.20
+SCRIPT_NAME::/
+SERVER_PROTOCOL::HTTP/1.1
+HTTP_HOST::localhost:3000
+HTTP_ACCEPT_LANGUAGE::en-us
+REMOTE_ADDR::127.0.0.1
+SERVER_SOFTWARE::Mongrel 1.1.5
+REQUEST_PATH::/server
+HTTP_REFERER::http://localhost:8080/session/new
+HTTP_COOKIE::_openid2_session=BAh7CDoMY3NyZl9pZCIlMzI4YmQ3M2U2MWNjOTQ4MjIyOTU3ZTU3Y2QzNDdm%250AN2E6HGxhc3RfcmVxdWVzdGVkX2VuZHBvaW50IiFodHRwOi8vbG9jYWxob3N0%250AOjMwMDAvc2VydmVyIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFz%250AaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--21f40c05882f426f8ffa7763f46e8b3b38d83449; _op_session=BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%250ASGFzaHsABjoKQHVzZWR7AA%253D%253D--0dc4f00aee925351bd20c1356502818a2ea3c582
+HTTP_VERSION::HTTP/1.1
+REQUEST_URI::/server?openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.mode=checkid_setup&openid.assoc_handle=%7BHMAC-SHA256%7D%7B485f46f2%7D%7BGviD4A%3D%3D%7D&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.return_to=http%3A%2F%2Flocalhost%3A8080%2Fsession&openid.realm=http%3A%2F%2Flocalhost%3A8080%2Fsession
+SERVER_PORT::3000
+GATEWAY_INTERFACE::CGI/1.2
+QUERY_STRING::openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.mode=checkid_setup&openid.assoc_handle=%7BHMAC-SHA256%7D%7B485f46f2%7D%7BGviD4A%3D%3D%7D&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.return_to=http%3A%2F%2Flocalhost%3A8080%2Fsession&openid.realm=http%3A%2F%2Flocalhost%3A8080%2Fsession
+HTTP_ACCEPT::text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+HTTP_CONNECTION::keep-alive
+REQUEST_METHOD::GET
+--
+  [4;35;1mOpenidAssociation Load (0.000302)[0m   [0mSELECT * FROM openid_associations WHERE (openid_associations."handle" = '{HMAC-SHA256}{485f46f2}{GviD4A==}') LIMIT 1[0m
+Redirected to http://localhost:8080/session?openid.claimed_id=http://localhost:3000/users/1&openid.ns=http://specs.openid.net/auth/2.0&openid.return_to=http://localhost:8080/session&openid.mode=id_res&openid.signed=op_endpoint,return_to,response_nonce,assoc_handle,claimed_id,identity&openid.op_endpoint=http://localhost:3000/server&openid.sig=XwsrXMtGqospBy4B9CBriE2UijEEgn7po7SLCQ8d+fc=&openid.response_nonce=2jFZeg2008-06-23T06:47:15Z&openid.assoc_handle={HMAC-SHA256}{485f46f2}{GviD4A==}&openid.identity=1
+Completed in 0.01119 (89 reqs/sec) | DB: 0.00030 (2%) | 302 Found [http://localhost/server?openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.mode=checkid_setup&openid.assoc_handle=%7BHMAC-SHA256%7D%7B485f46f2%7D%7BGviD4A%3D%3D%7D&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.return_to=http%3A%2F%2Flocalhost%3A8080%2Fsession&openid.realm=http%3A%2F%2Flocalhost%3A8080%2Fsession]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2008-06-23 15:47:15) [GET]
+  Session ID: af8eaea442cb8a666c4374982e2827d0
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"users"}
+--
+SERVER_NAME::localhost
+PATH_INFO::/users/1
+HTTP_USER_AGENT::Ruby-OpenidEngine
+SCRIPT_NAME::/
+SERVER_PROTOCOL::HTTP/1.1
+HTTP_HOST::localhost:3000
+REMOTE_ADDR::127.0.0.1
+SERVER_SOFTWARE::Mongrel 1.1.5
+REQUEST_PATH::/users/1
+HTTP_VERSION::HTTP/1.1
+REQUEST_URI::/users/1
+SERVER_PORT::3000
+GATEWAY_INTERFACE::CGI/1.2
+HTTP_ACCEPT::application/xrds+xml
+REQUEST_METHOD::GET
+--
+  [4;36;1mUser Load (0.000215)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) [0m
+
+
+Processing ServersController#show (for 127.0.0.1 at 2008-06-23 17:00:52) [GET]
+  Session ID: 585489e27d9a764848ec88f1b32852ae
+  Parameters: {"action"=>"show", "controller"=>"servers"}
+--
+SERVER_NAME::localhost
+PATH_INFO::/server
+HTTP_USER_AGENT::Ruby-OpenidEngine
+SCRIPT_NAME::/
+SERVER_PROTOCOL::HTTP/1.1
+HTTP_HOST::localhost:3000
+REMOTE_ADDR::127.0.0.1
+SERVER_SOFTWARE::Mongrel 1.1.5
+REQUEST_PATH::/server
+HTTP_VERSION::HTTP/1.1
+REQUEST_URI::/server
+SERVER_PORT::3000
+GATEWAY_INTERFACE::CGI/1.2
+HTTP_ACCEPT::application/xrds+xml
+REQUEST_METHOD::GET
+--
+Rendering servers/xrds.xml.erb
+Completed in 0.00673 (148 reqs/sec) | Rendering: 0.00115 (17%) | DB: 0.00000 (0%) | 200 OK [http://localhost/server]
+
+
+Processing ServersController#show (for 127.0.0.1 at 2008-06-23 17:00:52) [GET]
+  Session ID: 849d054a7d3f506188699f257ef06220
+  Parameters: {"action"=>"show", "controller"=>"servers"}
+--
+SERVER_NAME::localhost
+PATH_INFO::/server
+HTTP_USER_AGENT::Ruby-OpenidEngine
+SCRIPT_NAME::/
+SERVER_PROTOCOL::HTTP/1.1
+HTTP_HOST::localhost:3000
+REMOTE_ADDR::127.0.0.1
+SERVER_SOFTWARE::Mongrel 1.1.5
+REQUEST_PATH::/server
+HTTP_VERSION::HTTP/1.1
+REQUEST_URI::/server
+SERVER_PORT::3000
+GATEWAY_INTERFACE::CGI/1.2
+HTTP_ACCEPT::application/xrds+xml
+REQUEST_METHOD::GET
+--
+Rendering servers/xrds.xml.erb
+Completed in 0.00403 (248 reqs/sec) | Rendering: 0.00081 (20%) | DB: 0.00000 (0%) | 200 OK [http://localhost/server]
+
+
+Processing ServersController#create (for 127.0.0.1 at 2008-06-23 17:00:52) [POST]
+  Session ID: bde83d2b309d6091fe75ea7b51e717b2
+  Parameters: {"openid.mode"=>"associate", "openid.session_type"=>"DH-SHA256", "openid.dh_gen"=>"Ag==", "openid.assoc_type"=>"HMAC-SHA256", "openid.ns"=>"http://specs.openid.net/auth/2.0", "openid.dh_consumer_public"=>"WAvYWizGYx+9cq5wV89TaoUpQpDm0WmTa7sg8LP8awaxnoZzcCdQyAMnylnR\nBxeslkPysMcrWrGbfThiB5cx64fJ5TvqIaljQMtasPXBttd0xAEJldkvegJg\nqjYxw5IvPiYZmaOxVe9WN14KWenWlyxlz3Cy9K9CdZVd3+Rqhcs=", "action"=>"create", "openid.dh_modulus"=>"ANz5OguIOXLsDhmYmsWizjEOHTdxfo2Vcbt2I3MYZuYe91ouJ4mLBX+YkcLi\nemOcPym2CBRYHNOyyjmG0mg3BVd9RcLn5S3IHHoXGHblzqdLFEi/368Ygo79\nJRnxTkXjgmY0rxlJ5bU1zIKaSDuKdiI+XUkKJX8Fvf8W8vsixYOr", "controller"=>"servers"}
+--
+SERVER_NAME::localhost
+PATH_INFO::/server
+CONTENT_LENGTH::571
+HTTP_USER_AGENT::Ruby-OpenidEngine
+HTTP_CONTENT_TYPE::application/x-www-form-urlencoded
+SCRIPT_NAME::/
+SERVER_PROTOCOL::HTTP/1.1
+HTTP_HOST::localhost:3000
+REMOTE_ADDR::127.0.0.1
+SERVER_SOFTWARE::Mongrel 1.1.5
+HTTP_CONTENT_LENGTH::571
+REQUEST_PATH::/server
+CONTENT_TYPE::application/x-www-form-urlencoded
+HTTP_VERSION::HTTP/1.1
+REQUEST_URI::/server?openid.dh_gen=Ag%3D%3D&openid.assoc_type=HMAC-SHA256&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.dh_consumer_public=WAvYWizGYx%2B9cq5wV89TaoUpQpDm0WmTa7sg8LP8awaxnoZzcCdQyAMnylnR%0ABxeslkPysMcrWrGbfThiB5cx64fJ5TvqIaljQMtasPXBttd0xAEJldkvegJg%0AqjYxw5IvPiYZmaOxVe9WN14KWenWlyxlz3Cy9K9CdZVd3%2BRqhcs%3D&openid.session_type=DH-SHA256&openid.mode=associate&openid.dh_modulus=ANz5OguIOXLsDhmYmsWizjEOHTdxfo2Vcbt2I3MYZuYe91ouJ4mLBX%2BYkcLi%0AemOcPym2CBRYHNOyyjmG0mg3BVd9RcLn5S3IHHoXGHblzqdLFEi%2F368Ygo79%0AJRnxTkXjgmY0rxlJ5bU1zIKaSDuKdiI%2BXUkKJX8Fvf8W8vsixYOr
+RAW_POST_DATA::openid.dh_gen=Ag%3D%3D&openid.assoc_type=HMAC-SHA256&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.dh_consumer_public=WAvYWizGYx%2B9cq5wV89TaoUpQpDm0WmTa7sg8LP8awaxnoZzcCdQyAMnylnR%0ABxeslkPysMcrWrGbfThiB5cx64fJ5TvqIaljQMtasPXBttd0xAEJldkvegJg%0AqjYxw5IvPiYZmaOxVe9WN14KWenWlyxlz3Cy9K9CdZVd3%2BRqhcs%3D&openid.session_type=DH-SHA256&openid.mode=associate&openid.dh_modulus=ANz5OguIOXLsDhmYmsWizjEOHTdxfo2Vcbt2I3MYZuYe91ouJ4mLBX%2BYkcLi%0AemOcPym2CBRYHNOyyjmG0mg3BVd9RcLn5S3IHHoXGHblzqdLFEi%2F368Ygo79%0AJRnxTkXjgmY0rxlJ5bU1zIKaSDuKdiI%2BXUkKJX8Fvf8W8vsixYOr
+SERVER_PORT::3000
+GATEWAY_INTERFACE::CGI/1.2
+QUERY_STRING::openid.dh_gen=Ag%3D%3D&openid.assoc_type=HMAC-SHA256&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.dh_consumer_public=WAvYWizGYx%2B9cq5wV89TaoUpQpDm0WmTa7sg8LP8awaxnoZzcCdQyAMnylnR%0ABxeslkPysMcrWrGbfThiB5cx64fJ5TvqIaljQMtasPXBttd0xAEJldkvegJg%0AqjYxw5IvPiYZmaOxVe9WN14KWenWlyxlz3Cy9K9CdZVd3%2BRqhcs%3D&openid.session_type=DH-SHA256&openid.mode=associate&openid.dh_modulus=ANz5OguIOXLsDhmYmsWizjEOHTdxfo2Vcbt2I3MYZuYe91ouJ4mLBX%2BYkcLi%0AemOcPym2CBRYHNOyyjmG0mg3BVd9RcLn5S3IHHoXGHblzqdLFEi%2F368Ygo79%0AJRnxTkXjgmY0rxlJ5bU1zIKaSDuKdiI%2BXUkKJX8Fvf8W8vsixYOr
+HTTP_ACCEPT::*/*
+REQUEST_METHOD::POST
+--
+  [4;35;1mOpenidAssociation Create (0.001317)[0m   [0mINSERT INTO openid_associations ("handle", "updated_at", "lifetime", "encryption_type", "secret", "created_at") VALUES('{HMAC-SHA256}{485f5834}{VlmSiA==}', '2008-06-23 17:00:52', 3, 'HMAC-SHA256', '¥Ç»»kÄ\3ˆIèÏù¢ûç†“òv`+½‰qÑö(æ', '2008-06-23 17:00:52')[0m
+::assoc-response:: session_type => DH-SHA256
+::assoc-response:: expires_in => 3
+::assoc-response:: dh_server_public => YUcZMZVs+Aiuaier4sDM8/MBgu9/HHaR9wLUbYnyc+CIoFjZ9ixeF1VdvjPYkTUBlh16RGWl/n/iIDBO52S+HT6TVxngF30o6x6mVh3trMAgQWpaoNYTAYjv6nKE8I6iNHrgJgrgFTnMnK6cS8pVh+CdkAzzAfWZNn3vkUyFHBM=
+::assoc-response:: enc_mac_key => UeDK9NWmf25wws/MDQ2W6Titng8zH08VUcLrYYNyCAw=
+::assoc-response:: assoc_type => HMAC-SHA256
+::assoc-response:: assoc_handle => {HMAC-SHA256}{485f5834}{VlmSiA==}
+Completed in 1.22163 (0 reqs/sec) | Rendering: 0.00007 (0%) | DB: 0.00132 (0%) | 200 OK [http://localhost/server?openid.dh_gen=Ag%3D%3D&openid.assoc_type=HMAC-SHA256&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.dh_consumer_public=WAvYWizGYx%2B9cq5wV89TaoUpQpDm0WmTa7sg8LP8awaxnoZzcCdQyAMnylnR%0ABxeslkPysMcrWrGbfThiB5cx64fJ5TvqIaljQMtasPXBttd0xAEJldkvegJg%0AqjYxw5IvPiYZmaOxVe9WN14KWenWlyxlz3Cy9K9CdZVd3%2BRqhcs%3D&openid.session_type=DH-SHA256&openid.mode=associate&openid.dh_modulus=ANz5OguIOXLsDhmYmsWizjEOHTdxfo2Vcbt2I3MYZuYe91ouJ4mLBX%2BYkcLi%0AemOcPym2CBRYHNOyyjmG0mg3BVd9RcLn5S3IHHoXGHblzqdLFEi%2F368Ygo79%0AJRnxTkXjgmY0rxlJ5bU1zIKaSDuKdiI%2BXUkKJX8Fvf8W8vsixYOr]
+
+
+Processing ServersController#show (for 127.0.0.1 at 2008-06-23 17:00:53) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--0dc4f00aee925351bd20c1356502818a2ea3c582
+  Parameters: {"openid.return_to"=>"http://localhost:8080/session", "openid.mode"=>"checkid_setup", "openid.claimed_id"=>"http://specs.openid.net/auth/2.0/identifier_select", "openid.ns"=>"http://specs.openid.net/auth/2.0", "action"=>"show", "controller"=>"servers", "openid.identity"=>"http://specs.openid.net/auth/2.0/identifier_select", "openid.assoc_handle"=>"{HMAC-SHA256}{485f5834}{VlmSiA==}", "openid.realm"=>"http://localhost:8080/session"}
+--
+SERVER_NAME::localhost
+PATH_INFO::/server
+HTTP_ACCEPT_ENCODING::gzip, deflate
+HTTP_USER_AGENT::Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_5_3; en-us) AppleWebKit/526.1+ (KHTML, like Gecko) Version/3.1.1 Safari/525.20
+SCRIPT_NAME::/
+SERVER_PROTOCOL::HTTP/1.1
+HTTP_HOST::localhost:3000
+HTTP_ACCEPT_LANGUAGE::en-us
+REMOTE_ADDR::127.0.0.1
+SERVER_SOFTWARE::Mongrel 1.1.5
+REQUEST_PATH::/server
+HTTP_REFERER::http://localhost:8080/session/new
+HTTP_COOKIE::_openid2_session=BAh7CDoMY3NyZl9pZCIlMzI4YmQ3M2U2MWNjOTQ4MjIyOTU3ZTU3Y2QzNDdm%250AN2E6HGxhc3RfcmVxdWVzdGVkX2VuZHBvaW50IiFodHRwOi8vbG9jYWxob3N0%250AOjMwMDAvc2VydmVyIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFz%250AaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--21f40c05882f426f8ffa7763f46e8b3b38d83449; _op_session=BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%250ASGFzaHsABjoKQHVzZWR7AA%253D%253D--0dc4f00aee925351bd20c1356502818a2ea3c582
+HTTP_VERSION::HTTP/1.1
+REQUEST_URI::/server?openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.mode=checkid_setup&openid.assoc_handle=%7BHMAC-SHA256%7D%7B485f5834%7D%7BVlmSiA%3D%3D%7D&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.return_to=http%3A%2F%2Flocalhost%3A8080%2Fsession&openid.realm=http%3A%2F%2Flocalhost%3A8080%2Fsession
+SERVER_PORT::3000
+GATEWAY_INTERFACE::CGI/1.2
+QUERY_STRING::openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.mode=checkid_setup&openid.assoc_handle=%7BHMAC-SHA256%7D%7B485f5834%7D%7BVlmSiA%3D%3D%7D&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.return_to=http%3A%2F%2Flocalhost%3A8080%2Fsession&openid.realm=http%3A%2F%2Flocalhost%3A8080%2Fsession
+HTTP_ACCEPT::text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+HTTP_CONNECTION::keep-alive
+REQUEST_METHOD::GET
+--
+  [4;36;1mOpenidAssociation Load (0.000294)[0m   [0;1mSELECT * FROM openid_associations WHERE (openid_associations."handle" = '{HMAC-SHA256}{485f5834}{VlmSiA==}') LIMIT 1[0m
+Redirected to http://localhost:8080/session?openid.claimed_id=http://localhost:3000/users/1&openid.ns=http://specs.openid.net/auth/2.0&openid.return_to=http://localhost:8080/session&openid.mode=id_res&openid.signed=op_endpoint,return_to,response_nonce,assoc_handle,claimed_id,identity&openid.op_endpoint=http://localhost:3000/server&openid.sig=wKVyDyHCgI1PNFQIOP3O6/XuHJ4ZgjJ46SoJJkkHVt4=&openid.response_nonce=oJQvkX2008-06-23T08:00:54Z&openid.assoc_handle={HMAC-SHA256}{485f5834}{VlmSiA==}&openid.identity=1
+Completed in 0.01490 (67 reqs/sec) | DB: 0.00029 (1%) | 302 Found [http://localhost/server?openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.mode=checkid_setup&openid.assoc_handle=%7BHMAC-SHA256%7D%7B485f5834%7D%7BVlmSiA%3D%3D%7D&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.return_to=http%3A%2F%2Flocalhost%3A8080%2Fsession&openid.realm=http%3A%2F%2Flocalhost%3A8080%2Fsession]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2008-06-23 17:00:54) [GET]
+  Session ID: fcad05387724635a45de4d128e42c920
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"users"}
+--
+SERVER_NAME::localhost
+PATH_INFO::/users/1
+HTTP_USER_AGENT::Ruby-OpenidEngine
+SCRIPT_NAME::/
+SERVER_PROTOCOL::HTTP/1.1
+HTTP_HOST::localhost:3000
+REMOTE_ADDR::127.0.0.1
+SERVER_SOFTWARE::Mongrel 1.1.5
+REQUEST_PATH::/users/1
+HTTP_VERSION::HTTP/1.1
+REQUEST_URI::/users/1
+SERVER_PORT::3000
+GATEWAY_INTERFACE::CGI/1.2
+HTTP_ACCEPT::application/xrds+xml
+REQUEST_METHOD::GET
+--
+  [4;35;1mUser Load (0.000166)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) [0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2008-06-23 17:01:06) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--0dc4f00aee925351bd20c1356502818a2ea3c582
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"users"}
+--
+SERVER_NAME::localhost
+PATH_INFO::/users/1
+HTTP_ACCEPT_ENCODING::gzip, deflate
+HTTP_USER_AGENT::Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_5_3; en-us) AppleWebKit/526.1+ (KHTML, like Gecko) Version/3.1.1 Safari/525.20
+SCRIPT_NAME::/
+SERVER_PROTOCOL::HTTP/1.1
+HTTP_HOST::localhost:3000
+HTTP_ACCEPT_LANGUAGE::en-us
+REMOTE_ADDR::127.0.0.1
+SERVER_SOFTWARE::Mongrel 1.1.5
+REQUEST_PATH::/users/1
+HTTP_COOKIE::_openid2_session=BAh7CDoMY3NyZl9pZCIlMzI4YmQ3M2U2MWNjOTQ4MjIyOTU3ZTU3Y2QzNDdm%250AN2E6HGxhc3RfcmVxdWVzdGVkX2VuZHBvaW50IiFodHRwOi8vbG9jYWxob3N0%250AOjMwMDAvc2VydmVyIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFz%250AaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--21f40c05882f426f8ffa7763f46e8b3b38d83449; _op_session=BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%250ASGFzaHsABjoKQHVzZWR7AA%253D%253D--0dc4f00aee925351bd20c1356502818a2ea3c582
+HTTP_VERSION::HTTP/1.1
+REQUEST_URI::/users/1
+SERVER_PORT::3000
+GATEWAY_INTERFACE::CGI/1.2
+HTTP_ACCEPT::text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+HTTP_CONNECTION::keep-alive
+REQUEST_METHOD::GET
+--
+  [4;36;1mUser Load (0.000172)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) [0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2008-06-23 17:10:08) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--0dc4f00aee925351bd20c1356502818a2ea3c582
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"users"}
+--
+SERVER_NAME::localhost
+PATH_INFO::/users/1
+HTTP_ACCEPT_ENCODING::gzip, deflate
+HTTP_USER_AGENT::Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_5_3; en-us) AppleWebKit/526.1+ (KHTML, like Gecko) Version/3.1.1 Safari/525.20
+SCRIPT_NAME::/
+SERVER_PROTOCOL::HTTP/1.1
+HTTP_HOST::localhost:3000
+HTTP_ACCEPT_LANGUAGE::en-us
+REMOTE_ADDR::127.0.0.1
+SERVER_SOFTWARE::Mongrel 1.1.5
+REQUEST_PATH::/users/1
+HTTP_COOKIE::_openid2_session=BAh7CDoMY3NyZl9pZCIlMzI4YmQ3M2U2MWNjOTQ4MjIyOTU3ZTU3Y2QzNDdm%250AN2E6HGxhc3RfcmVxdWVzdGVkX2VuZHBvaW50IiFodHRwOi8vbG9jYWxob3N0%250AOjMwMDAvc2VydmVyIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFz%250AaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--21f40c05882f426f8ffa7763f46e8b3b38d83449; _op_session=BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%250ASGFzaHsABjoKQHVzZWR7AA%253D%253D--0dc4f00aee925351bd20c1356502818a2ea3c582
+HTTP_VERSION::HTTP/1.1
+REQUEST_URI::/users/1
+SERVER_PORT::3000
+GATEWAY_INTERFACE::CGI/1.2
+HTTP_ACCEPT::text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+HTTP_CONNECTION::keep-alive
+REQUEST_METHOD::GET
+--
+  [4;36;1mUser Load (0.000321)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) [0m
+Rendering template within layouts/default
+Rendering users/show
+Completed in 0.02857 (35 reqs/sec) | Rendering: 0.01442 (50%) | DB: 0.00032 (1%) | 200 OK [http://localhost/users/1]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2008-06-23 17:10:11) [GET]
+  Session ID: d08248c1c2f64049ac6ff91f36f7ad67
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"users"}
+--
+SERVER_NAME::localhost
+PATH_INFO::/users/1
+HTTP_USER_AGENT::Ruby-OpenidEngine
+SCRIPT_NAME::/
+SERVER_PROTOCOL::HTTP/1.1
+HTTP_HOST::localhost:3000
+REMOTE_ADDR::127.0.0.1
+SERVER_SOFTWARE::Mongrel 1.1.5
+REQUEST_PATH::/users/1
+HTTP_VERSION::HTTP/1.1
+REQUEST_URI::/users/1
+SERVER_PORT::3000
+GATEWAY_INTERFACE::CGI/1.2
+HTTP_ACCEPT::application/xrds+xml
+REQUEST_METHOD::GET
+--
+  [4;35;1mUser Load (0.000360)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) [0m
+Rendering users/xrds.xml.erb
+Completed in 0.01538 (65 reqs/sec) | Rendering: 0.00194 (12%) | DB: 0.00036 (2%) | 200 OK [http://localhost/users/1]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2008-06-23 17:10:11) [GET]
+  Session ID: 54e5967a2df1e538ad3e579bd04b84bd
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"users"}
+--
+SERVER_NAME::localhost
+PATH_INFO::/users/1
+HTTP_USER_AGENT::Ruby-OpenidEngine
+SCRIPT_NAME::/
+SERVER_PROTOCOL::HTTP/1.1
+HTTP_HOST::localhost:3000
+REMOTE_ADDR::127.0.0.1
+SERVER_SOFTWARE::Mongrel 1.1.5
+REQUEST_PATH::/users/1
+HTTP_VERSION::HTTP/1.1
+REQUEST_URI::/users/1
+SERVER_PORT::3000
+GATEWAY_INTERFACE::CGI/1.2
+HTTP_ACCEPT::application/xrds+xml
+REQUEST_METHOD::GET
+--
+  [4;36;1mUser Load (0.000389)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) [0m
+Rendering users/xrds.xml.erb
+Completed in 0.01244 (80 reqs/sec) | Rendering: 0.00099 (7%) | DB: 0.00039 (3%) | 200 OK [http://localhost/users/1]

@@ -16981,3 +16981,996 @@ REQUEST_METHOD::GET
   [4;35;1mOpenidAssociation Load (0.000369)[0m   [0mSELECT * FROM openid_associations WHERE (openid_associations."handle" = 'openid-assoc-handle') LIMIT 1[0m
 Redirected to http://localhost:8080/session/?openid.return_to=http://localhost:8080/session/&openid.assoc_handle=openid-assoc-handle&openid.claimed_id=http://test.host/users/1&openid.identity=1&openid.mode=id_res&openid.signed=op_endpoint,return_to,response_nonce,assoc_handle,claimed_id,identity&openid.ns=http://specs.openid.net/auth/2.0&openid.sig=ss5RHB46sssjOm7u4bSZFL04wAZ3CqHF9IPoLuer/OI=&openid.op_endpoint=http://test.host/server&openid.response_nonce=5uwDmz2008-06-03T02:18:10Z
 Completed in 0.02294 (43 reqs/sec) | DB: 0.00067 (2%) | 302 Found [http://test.host/server?openid.assoc_handle=openid-assoc-handle&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.mode=checkid_setup&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.realm=http%3A%2F%2Flocalhost%3A8080%2Fsession%2F&openid.return_to=http%3A%2F%2Flocalhost%3A8080%2Fsession%2F]
+  [4;36;1mSQL (0.000224)[0m   [0;1mSELECT count(*) AS count_all FROM users [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2008-06-23 15:33:05) [POST]
+  Session ID: 
+  Parameters: {"user"=>{"password_confirmation"=>"quire", "password"=>"quire", "login"=>"quire", "email"=>nil}, "action"=>"create", "controller"=>"users"}
+--
+REMOTE_ADDR::0.0.0.0
+REQUEST_URI::/users?user%5Bemail%5D=&user%5Blogin%5D=quire&user%5Bpassword%5D=quire&user%5Bpassword_confirmation%5D=quire
+SERVER_PORT::80
+REQUEST_METHOD::POST
+--
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+  [4;35;1mUser Load (0.000253)[0m   [0mSELECT * FROM users WHERE (LOWER(users.login) = 'quire') LIMIT 1[0m
+  [4;36;1mUser Load (0.000114)[0m   [0;1mSELECT * FROM users WHERE (users.email IS NULL) LIMIT 1[0m
+Rendering template within layouts/default
+Rendering users/new
+Completed in 0.00670 (149 reqs/sec) | Rendering: 0.00048 (7%) | DB: 0.00059 (8%) | 200 OK [http://test.host/users?user%5Bemail%5D=&user%5Blogin%5D=quire&user%5Bpassword%5D=quire&user%5Bpassword_confirmation%5D=quire]
+  [4;35;1mSQL (0.000152)[0m   [0mSELECT count(*) AS count_all FROM users [0m
+  [4;36;1mSQL (0.000264)[0m   [0;1mSELECT count(*) AS count_all FROM users [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2008-06-23 15:33:06) [POST]
+  Session ID: 
+  Parameters: {"user"=>{"password_confirmation"=>nil, "password"=>"quire", "login"=>"quire", "email"=>"quire@example.com"}, "action"=>"create", "controller"=>"users"}
+--
+REMOTE_ADDR::0.0.0.0
+REQUEST_URI::/users?user%5Bemail%5D=quire%40example.com&user%5Blogin%5D=quire&user%5Bpassword%5D=quire&user%5Bpassword_confirmation%5D=
+SERVER_PORT::80
+REQUEST_METHOD::POST
+--
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+  [4;35;1mUser Load (0.000165)[0m   [0mSELECT * FROM users WHERE (LOWER(users.login) = 'quire') LIMIT 1[0m
+  [4;36;1mUser Load (0.000122)[0m   [0;1mSELECT * FROM users WHERE (LOWER(users.email) = 'quire@example.com') LIMIT 1[0m
+Rendering template within layouts/default
+Rendering users/new
+Completed in 0.00194 (515 reqs/sec) | Rendering: 0.00026 (13%) | DB: 0.00070 (36%) | 200 OK [http://test.host/users?user%5Bemail%5D=quire%40example.com&user%5Blogin%5D=quire&user%5Bpassword%5D=quire&user%5Bpassword_confirmation%5D=]
+  [4;35;1mSQL (0.000142)[0m   [0mSELECT count(*) AS count_all FROM users [0m
+  [4;36;1mSQL (0.000197)[0m   [0;1mSELECT count(*) AS count_all FROM users [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2008-06-23 15:33:06) [POST]
+  Session ID: 
+  Parameters: {"user"=>{"password_confirmation"=>"quire", "password"=>nil, "login"=>"quire", "email"=>"quire@example.com"}, "action"=>"create", "controller"=>"users"}
+--
+REMOTE_ADDR::0.0.0.0
+REQUEST_URI::/users?user%5Bemail%5D=quire%40example.com&user%5Blogin%5D=quire&user%5Bpassword%5D=&user%5Bpassword_confirmation%5D=quire
+SERVER_PORT::80
+REQUEST_METHOD::POST
+--
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+  [4;35;1mUser Load (0.000156)[0m   [0mSELECT * FROM users WHERE (LOWER(users.login) = 'quire') LIMIT 1[0m
+  [4;36;1mUser Load (0.000122)[0m   [0;1mSELECT * FROM users WHERE (LOWER(users.email) = 'quire@example.com') LIMIT 1[0m
+Rendering template within layouts/default
+Rendering users/new
+Completed in 0.00184 (543 reqs/sec) | Rendering: 0.00025 (13%) | DB: 0.00062 (33%) | 200 OK [http://test.host/users?user%5Bemail%5D=quire%40example.com&user%5Blogin%5D=quire&user%5Bpassword%5D=&user%5Bpassword_confirmation%5D=quire]
+  [4;35;1mSQL (0.000139)[0m   [0mSELECT count(*) AS count_all FROM users [0m
+  [4;36;1mSQL (0.000179)[0m   [0;1mSELECT count(*) AS count_all FROM users [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2008-06-23 15:33:06) [POST]
+  Session ID: 
+  Parameters: {"user"=>{"password_confirmation"=>"quire", "password"=>"quire", "login"=>nil, "email"=>"quire@example.com"}, "action"=>"create", "controller"=>"users"}
+--
+REMOTE_ADDR::0.0.0.0
+REQUEST_URI::/users?user%5Bemail%5D=quire%40example.com&user%5Blogin%5D=&user%5Bpassword%5D=quire&user%5Bpassword_confirmation%5D=quire
+SERVER_PORT::80
+REQUEST_METHOD::POST
+--
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+  [4;35;1mUser Load (0.000149)[0m   [0mSELECT * FROM users WHERE (users.login IS NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000131)[0m   [0;1mSELECT * FROM users WHERE (LOWER(users.email) = 'quire@example.com') LIMIT 1[0m
+Rendering template within layouts/default
+Rendering users/new
+Completed in 0.00198 (504 reqs/sec) | Rendering: 0.00036 (18%) | DB: 0.00060 (30%) | 200 OK [http://test.host/users?user%5Bemail%5D=quire%40example.com&user%5Blogin%5D=&user%5Bpassword%5D=quire&user%5Bpassword_confirmation%5D=quire]
+  [4;35;1mSQL (0.000175)[0m   [0mSELECT count(*) AS count_all FROM users [0m
+  [4;36;1mSQL (0.000213)[0m   [0;1mSELECT count(*) AS count_all FROM users [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2008-06-23 15:33:06) [POST]
+  Session ID: 
+  Parameters: {"user"=>{"password_confirmation"=>"quire", "password"=>"quire", "login"=>"quire", "email"=>"quire@example.com"}, "action"=>"create", "controller"=>"users"}
+--
+REMOTE_ADDR::0.0.0.0
+REQUEST_URI::/users?user%5Bemail%5D=quire%40example.com&user%5Blogin%5D=quire&user%5Bpassword%5D=quire&user%5Bpassword_confirmation%5D=quire
+SERVER_PORT::80
+REQUEST_METHOD::POST
+--
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+  [4;35;1mUser Load (0.000162)[0m   [0mSELECT * FROM users WHERE (LOWER(users.login) = 'quire') LIMIT 1[0m
+  [4;36;1mUser Load (0.000124)[0m   [0;1mSELECT * FROM users WHERE (LOWER(users.email) = 'quire@example.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.000400)[0m   [0mINSERT INTO users ("salt", "updated_at", "crypted_password", "remember_token_expires_at", "remember_token", "login", "created_at", "email") VALUES('3eb52d0487542e4a9aed2b622ad7cd21ad69abf0', '2008-06-23 15:33:06', 'b2a716e343ed0ff93000ad596c7546effbf379d6', NULL, NULL, 'quire', '2008-06-23 15:33:06', 'quire@example.com')[0m
+Redirected to http://test.host/
+Completed in 0.00295 (339 reqs/sec) | DB: 0.00107 (36%) | 302 Found [http://test.host/users?user%5Bemail%5D=quire%40example.com&user%5Blogin%5D=quire&user%5Bpassword%5D=quire&user%5Bpassword_confirmation%5D=quire]
+  [4;36;1mSQL (0.000143)[0m   [0;1mSELECT count(*) AS count_all FROM users [0m
+
+
+Processing UsersController#xrds (for 0.0.0.0 at 2008-06-23 15:33:06) [GET]
+  Session ID: 
+  Parameters: {"action"=>"xrds", "id"=>"1", "controller"=>"users"}
+--
+REMOTE_ADDR::0.0.0.0
+REQUEST_URI::/users/1/xrds
+SERVER_PORT::80
+REQUEST_METHOD::GET
+--
+  [4;35;1mUser Load (0.000369)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) [0m
+Rendering users/xrds.xml.erb
+Completed in 0.00198 (505 reqs/sec) | Rendering: 0.00074 (37%) | DB: 0.00051 (25%) | 200 OK [http://test.host/users/1/xrds]
+
+
+Processing UsersController#xrds (for 0.0.0.0 at 2008-06-23 15:33:06) [GET]
+  Session ID: 
+  Parameters: {"action"=>"xrds", "id"=>"1000", "controller"=>"users"}
+--
+REMOTE_ADDR::0.0.0.0
+REQUEST_URI::/users/1000/xrds
+SERVER_PORT::80
+REQUEST_METHOD::GET
+--
+  [4;36;1mUser Load (0.000188)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1000) [0m
+  [4;35;1mUser Load (0.000338)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) [0m
+  [4;36;1mUser Update (0.000362)[0m   [0;1mUPDATE users SET "created_at" = '2008-06-18 15:33:05', "email" = 'quentin@example.com', "remember_token" = '3ffa39497434e5276623cf49cb736871355c367d', "login" = 'quentin', "remember_token_expires_at" = '2008-07-07 06:33:06', "crypted_password" = '00742970dc9e6319f8019fd54864d3ea740f04b1', "updated_at" = '2008-06-23 15:33:06', "salt" = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd' WHERE "id" = 1[0m
+
+
+Processing SessionsController#new (for 0.0.0.0 at 2008-06-23 15:33:06) [GET]
+  Session ID: 
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+--
+REMOTE_ADDR::0.0.0.0
+REQUEST_URI::/session/new
+SERVER_PORT::80
+REQUEST_METHOD::GET
+--
+Rendering template within layouts/default
+Rendering sessions/new
+Completed in 0.00277 (361 reqs/sec) | Rendering: 0.00035 (12%) | DB: 0.00070 (25%) | 200 OK [http://test.host/session/new]
+  [4;35;1mUser Load (0.000171)[0m   [0mSELECT * FROM users WHERE (users."remember_token" = 'invalid_auth_token') LIMIT 1[0m
+  [4;36;1mUser Load (0.000326)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) [0m
+  [4;35;1mUser Update (0.000325)[0m   [0mUPDATE users SET "created_at" = '2008-06-18 15:33:05', "email" = 'quentin@example.com', "remember_token" = '3ffa39497434e5276623cf49cb736871355c367d', "login" = 'quentin', "remember_token_expires_at" = '2008-07-07 06:33:06', "crypted_password" = '00742970dc9e6319f8019fd54864d3ea740f04b1', "updated_at" = '2008-06-23 15:33:06', "salt" = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd' WHERE "id" = 1[0m
+  [4;36;1mUser Update (0.000156)[0m   [0;1mUPDATE users SET "created_at" = '2008-06-18 15:33:05', "email" = 'quentin@example.com', "remember_token" = '3ffa39497434e5276623cf49cb736871355c367d', "login" = 'quentin', "remember_token_expires_at" = '2008-06-23 15:28:06', "crypted_password" = '00742970dc9e6319f8019fd54864d3ea740f04b1', "updated_at" = '2008-06-23 15:33:06', "salt" = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd' WHERE "id" = 1[0m
+
+
+Processing SessionsController#new (for 0.0.0.0 at 2008-06-23 15:33:06) [GET]
+  Session ID: 
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+--
+REMOTE_ADDR::0.0.0.0
+REQUEST_URI::/session/new
+SERVER_PORT::80
+REQUEST_METHOD::GET
+--
+Rendering template within layouts/default
+Rendering sessions/new
+Completed in 0.00056 (1786 reqs/sec) | Rendering: 0.00023 (41%) | DB: 0.00098 (174%) | 200 OK [http://test.host/session/new]
+  [4;35;1mUser Load (0.000314)[0m   [0mSELECT * FROM users WHERE (users."remember_token" = '3ffa39497434e5276623cf49cb736871355c367d') LIMIT 1[0m
+  [4;36;1mUser Load (0.000676)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) [0m
+  [4;35;1mUser Update (0.000355)[0m   [0mUPDATE users SET "created_at" = '2008-06-18 15:33:05', "email" = 'quentin@example.com', "remember_token" = '3ffa39497434e5276623cf49cb736871355c367d', "login" = 'quentin', "remember_token_expires_at" = '2008-07-07 06:33:06', "crypted_password" = '00742970dc9e6319f8019fd54864d3ea740f04b1', "updated_at" = '2008-06-23 15:33:06', "salt" = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd' WHERE "id" = 1[0m
+
+
+Processing SessionsController#new (for 0.0.0.0 at 2008-06-23 15:33:06) [GET]
+  Session ID: 
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+--
+REMOTE_ADDR::0.0.0.0
+REQUEST_URI::/session/new
+SERVER_PORT::80
+REQUEST_METHOD::GET
+--
+Rendering template within layouts/default
+Rendering sessions/new
+Completed in 0.00061 (1650 reqs/sec) | Rendering: 0.00023 (37%) | DB: 0.00134 (221%) | 200 OK [http://test.host/session/new]
+  [4;36;1mUser Load (0.000316)[0m   [0;1mSELECT * FROM users WHERE (users."remember_token" = '3ffa39497434e5276623cf49cb736871355c367d') LIMIT 1[0m
+Cookie set: auth_token=3ffa39497434e5276623cf49cb736871355c367d; path=/; expires=Sun, 06 Jul 2008 21:33:06 GMT
+  [4;35;1mUser Load (0.000342)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) [0m
+
+
+Processing SessionsController#destroy (for 0.0.0.0 at 2008-06-23 15:33:06) [GET]
+  Session ID: 
+  Parameters: {"action"=>"destroy", "controller"=>"sessions"}
+--
+REMOTE_ADDR::0.0.0.0
+REQUEST_URI::/session
+SERVER_PORT::80
+REQUEST_METHOD::GET
+--
+  [4;36;1mUser Load (0.000289)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;35;1mUser Update (0.000365)[0m   [0mUPDATE users SET "created_at" = '2008-06-18 15:33:05', "email" = 'quentin@example.com', "remember_token" = NULL, "login" = 'quentin', "remember_token_expires_at" = NULL, "crypted_password" = '00742970dc9e6319f8019fd54864d3ea740f04b1', "updated_at" = '2008-06-23 15:33:06', "salt" = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd' WHERE "id" = 1[0m
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+Redirected to http://test.host/
+Completed in 0.00219 (456 reqs/sec) | DB: 0.00131 (59%) | 302 Found [http://test.host/session]
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2008-06-23 15:33:06) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"sessions", "password"=>"test", "login"=>"quentin", "remember_me"=>"0"}
+--
+REMOTE_ADDR::0.0.0.0
+REQUEST_URI::/session?login=quentin&password=test&remember_me=0
+SERVER_PORT::80
+REQUEST_METHOD::POST
+--
+  [4;36;1mUser Load (0.000374)[0m   [0;1mSELECT * FROM users WHERE (users."login" = 'quentin') LIMIT 1[0m
+Redirected to http://test.host/session
+Completed in 0.00120 (831 reqs/sec) | DB: 0.00037 (31%) | 302 Found [http://test.host/session?login=quentin&password=test&remember_me=0]
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2008-06-23 15:33:06) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"sessions", "password"=>"test", "login"=>"quentin", "remember_me"=>"1"}
+--
+REMOTE_ADDR::0.0.0.0
+REQUEST_URI::/session?login=quentin&password=test&remember_me=1
+SERVER_PORT::80
+REQUEST_METHOD::POST
+--
+  [4;35;1mUser Load (0.000322)[0m   [0mSELECT * FROM users WHERE (users."login" = 'quentin') LIMIT 1[0m
+  [4;36;1mUser Update (0.000388)[0m   [0;1mUPDATE users SET "created_at" = '2008-06-18 15:33:05', "email" = 'quentin@example.com', "remember_token" = '3ffa39497434e5276623cf49cb736871355c367d', "login" = 'quentin', "remember_token_expires_at" = '2008-07-07 06:33:06', "crypted_password" = '00742970dc9e6319f8019fd54864d3ea740f04b1', "updated_at" = '2008-06-23 15:33:06', "salt" = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd' WHERE "id" = 1[0m
+Cookie set: auth_token=3ffa39497434e5276623cf49cb736871355c367d; path=/; expires=Mon, 07 Jul 2008 06:33:06 GMT
+Redirected to http://test.host/session
+Completed in 0.00251 (397 reqs/sec) | DB: 0.00071 (28%) | 302 Found [http://test.host/session?login=quentin&password=test&remember_me=1]
+  [4;35;1mUser Load (0.000430)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) [0m
+
+
+Processing SessionsController#destroy (for 0.0.0.0 at 2008-06-23 15:33:06) [GET]
+  Session ID: 
+  Parameters: {"action"=>"destroy", "controller"=>"sessions"}
+--
+REMOTE_ADDR::0.0.0.0
+REQUEST_URI::/session
+SERVER_PORT::80
+REQUEST_METHOD::GET
+--
+  [4;36;1mUser Load (0.000355)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;35;1mUser Update (0.000323)[0m   [0mUPDATE users SET "created_at" = '2008-06-18 15:33:05', "email" = 'quentin@example.com', "remember_token" = NULL, "login" = 'quentin', "remember_token_expires_at" = NULL, "crypted_password" = '00742970dc9e6319f8019fd54864d3ea740f04b1', "updated_at" = '2008-06-23 15:33:06', "salt" = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd' WHERE "id" = 1[0m
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+Redirected to http://test.host/
+Completed in 0.00202 (495 reqs/sec) | DB: 0.00111 (54%) | 302 Found [http://test.host/session]
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2008-06-23 15:33:06) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"sessions", "password"=>"bad password", "login"=>"quentin"}
+--
+REMOTE_ADDR::0.0.0.0
+REQUEST_URI::/session?login=quentin&password=bad+password
+SERVER_PORT::80
+REQUEST_METHOD::POST
+--
+  [4;36;1mUser Load (0.000397)[0m   [0;1mSELECT * FROM users WHERE (users."login" = 'quentin') LIMIT 1[0m
+Rendering template within layouts/default
+Rendering sessions/new
+Completed in 0.00146 (685 reqs/sec) | Rendering: 0.00028 (19%) | DB: 0.00040 (27%) | 200 OK [http://test.host/session?login=quentin&password=bad+password]
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2008-06-23 15:33:06) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"sessions", "password"=>"test", "login"=>"quentin"}
+--
+REMOTE_ADDR::0.0.0.0
+REQUEST_URI::/session?login=quentin&password=test
+SERVER_PORT::80
+REQUEST_METHOD::POST
+--
+  [4;35;1mUser Load (0.000465)[0m   [0mSELECT * FROM users WHERE (users."login" = 'quentin') LIMIT 1[0m
+Redirected to http://test.host/session
+Completed in 0.00123 (810 reqs/sec) | DB: 0.00047 (37%) | 302 Found [http://test.host/session?login=quentin&password=test]
+  [4;36;1mOpenidAssociation Load (0.000305)[0m   [0;1mSELECT * FROM openid_associations WHERE (openid_associations."id" = 1) [0m
+
+
+Processing ServersController#show (for 0.0.0.0 at 2008-06-23 15:33:06) [GET]
+  Session ID: 
+  Parameters: {"openid.mode"=>"checkid_setup", "openid.claimed_id"=>"http://specs.openid.net/auth/2.0/identifier_select", "openid.return_to"=>"http://localhost:8080/session/", "openid.ns"=>"http://specs.openid.net/auth/2.0", "action"=>"show", "controller"=>"servers", "openid.identity"=>"http://specs.openid.net/auth/2.0/identifier_select", "openid.assoc_handle"=>"openid-assoc-handle", "openid.realm"=>"http://localhost:8080/session/"}
+--
+REMOTE_ADDR::0.0.0.0
+REQUEST_URI::/server?openid.assoc_handle=openid-assoc-handle&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.mode=checkid_setup&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.realm=http%3A%2F%2Flocalhost%3A8080%2Fsession%2F&openid.return_to=http%3A%2F%2Flocalhost%3A8080%2Fsession%2F
+SERVER_PORT::80
+REQUEST_METHOD::GET
+--
+  [4;35;1mOpenidAssociation Load (0.000307)[0m   [0mSELECT * FROM openid_associations WHERE (openid_associations."handle" = 'openid-assoc-handle') LIMIT 1[0m
+Redirected to http://localhost:8080/session/?openid.identity=1&openid.signed=op_endpoint,return_to,response_nonce,assoc_handle,claimed_id,identity&openid.sig=2w9+JgnLf6G0JvcN2Obt7TAasO8N9IIlXzXnc8uerUw=&openid.mode=id_res&openid.claimed_id=http://test.host/users/1&openid.ns=http://specs.openid.net/auth/2.0&openid.response_nonce=5AH6c82008-06-23T06:33:06Z&openid.return_to=http://localhost:8080/session/&openid.assoc_handle=openid-assoc-handle&openid.op_endpoint=http://test.host/server
+Completed in 0.00503 (198 reqs/sec) | DB: 0.00061 (12%) | 302 Found [http://test.host/server?openid.assoc_handle=openid-assoc-handle&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.mode=checkid_setup&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.realm=http%3A%2F%2Flocalhost%3A8080%2Fsession%2F&openid.return_to=http%3A%2F%2Flocalhost%3A8080%2Fsession%2F]
+  [4;36;1mSQL (0.000430)[0m   [0;1mSELECT count(*) AS count_all FROM users [0m
+  [4;35;1mUser Load (0.000213)[0m   [0mSELECT * FROM users WHERE (LOWER(users.login) = 'quire') LIMIT 1[0m
+  [4;36;1mUser Load (0.000130)[0m   [0;1mSELECT * FROM users WHERE (LOWER(users.email) = 'quire@example.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.000436)[0m   [0mINSERT INTO users ("salt", "updated_at", "crypted_password", "remember_token_expires_at", "remember_token", "login", "created_at", "email") VALUES('3eb52d0487542e4a9aed2b622ad7cd21ad69abf0', '2008-06-23 15:33:06', 'b2a716e343ed0ff93000ad596c7546effbf379d6', NULL, NULL, 'quire', '2008-06-23 15:33:06', 'quire@example.com')[0m
+  [4;36;1mSQL (0.000166)[0m   [0;1mSELECT count(*) AS count_all FROM users [0m
+  [4;35;1mUser Load (0.000383)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) [0m
+  [4;36;1mUser Update (0.000344)[0m   [0;1mUPDATE users SET "created_at" = '2008-06-18 15:33:05', "email" = 'quentin@example.com', "remember_token" = '3ffa39497434e5276623cf49cb736871355c367d', "login" = 'quentin', "remember_token_expires_at" = '2008-07-07 06:33:06', "crypted_password" = '00742970dc9e6319f8019fd54864d3ea740f04b1', "updated_at" = '2008-06-23 15:33:06', "salt" = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd' WHERE "id" = 1[0m
+  [4;35;1mUser Load (0.000365)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) [0m
+  [4;36;1mUser Update (0.000368)[0m   [0;1mUPDATE users SET "created_at" = '2008-06-18 15:33:05', "email" = 'quentin@example.com', "remember_token" = '6472b34d2d57fb86afc6bcbaf9ae48909f9e7fce', "login" = 'quentin', "remember_token_expires_at" = '2008-06-30 06:33:06', "crypted_password" = '00742970dc9e6319f8019fd54864d3ea740f04b1', "updated_at" = '2008-06-23 15:33:06', "salt" = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd' WHERE "id" = 1[0m
+  [4;35;1mUser Load (0.000390)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) [0m
+  [4;36;1mUser Update (0.000358)[0m   [0;1mUPDATE users SET "created_at" = '2008-06-18 15:33:05', "email" = 'quentin@example.com', "remember_token" = '6472b34d2d57fb86afc6bcbaf9ae48909f9e7fce', "login" = 'quentin', "remember_token_expires_at" = '2008-06-30 06:33:06', "crypted_password" = '00742970dc9e6319f8019fd54864d3ea740f04b1', "updated_at" = '2008-06-23 15:33:06', "salt" = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd' WHERE "id" = 1[0m
+  [4;35;1mUser Load (0.000449)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) [0m
+  [4;36;1mUser Update (0.000322)[0m   [0;1mUPDATE users SET "created_at" = '2008-06-18 15:33:05', "email" = 'quentin@example.com', "remember_token" = '3ffa39497434e5276623cf49cb736871355c367d', "login" = 'quentin', "remember_token_expires_at" = '2008-07-07 06:33:06', "crypted_password" = '00742970dc9e6319f8019fd54864d3ea740f04b1', "updated_at" = '2008-06-23 15:33:06', "salt" = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd' WHERE "id" = 1[0m
+  [4;35;1mUser Update (0.000113)[0m   [0mUPDATE users SET "created_at" = '2008-06-18 15:33:05', "email" = 'quentin@example.com', "remember_token" = NULL, "login" = 'quentin', "remember_token_expires_at" = NULL, "crypted_password" = '00742970dc9e6319f8019fd54864d3ea740f04b1', "updated_at" = '2008-06-23 15:33:06', "salt" = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd' WHERE "id" = 1[0m
+  [4;36;1mUser Load (0.000410)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) [0m
+  [4;35;1mUser Update (0.000306)[0m   [0mUPDATE users SET "created_at" = '2008-06-18 15:33:05', "email" = 'quentin@example.com', "remember_token" = '3ffa39497434e5276623cf49cb736871355c367d', "login" = 'quentin', "remember_token_expires_at" = '2008-07-07 06:33:06', "crypted_password" = '00742970dc9e6319f8019fd54864d3ea740f04b1', "updated_at" = '2008-06-23 15:33:06', "salt" = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd' WHERE "id" = 1[0m
+  [4;36;1mUser Load (0.000368)[0m   [0;1mSELECT * FROM users WHERE (users."login" = 'quentin') LIMIT 1[0m
+  [4;35;1mUser Load (0.000262)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) [0m
+  [4;36;1mUser Load (0.000339)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) [0m
+  [4;35;1mUser Load (0.000176)[0m   [0mSELECT * FROM users WHERE (LOWER(users.login) = 'quentin2' AND users.id <> 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.000140)[0m   [0;1mSELECT * FROM users WHERE (LOWER(users.email) = 'quentin@example.com' AND users.id <> 1) LIMIT 1[0m
+  [4;35;1mUser Update (0.000325)[0m   [0mUPDATE users SET "created_at" = '2008-06-18 15:33:05', "email" = 'quentin@example.com', "remember_token" = NULL, "login" = 'quentin2', "remember_token_expires_at" = NULL, "crypted_password" = '00742970dc9e6319f8019fd54864d3ea740f04b1', "updated_at" = '2008-06-23 15:33:06', "salt" = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd' WHERE "id" = 1[0m
+  [4;36;1mUser Load (0.000295)[0m   [0;1mSELECT * FROM users WHERE (users."login" = 'quentin2') LIMIT 1[0m
+  [4;35;1mUser Load (0.000328)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) [0m
+  [4;36;1mUser Load (0.000185)[0m   [0;1mSELECT * FROM users WHERE (LOWER(users.login) = 'quentin' AND users.id <> 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.000142)[0m   [0mSELECT * FROM users WHERE (LOWER(users.email) = 'quentin@example.com' AND users.id <> 1) LIMIT 1[0m
+  [4;36;1mUser Update (0.000304)[0m   [0;1mUPDATE users SET "created_at" = '2008-06-18 15:33:05', "email" = 'quentin@example.com', "remember_token" = NULL, "login" = 'quentin', "remember_token_expires_at" = NULL, "crypted_password" = '4b6dd603c64f03bc2f676658e287094878df9603', "updated_at" = '2008-06-23 15:33:06', "salt" = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd' WHERE "id" = 1[0m
+  [4;35;1mUser Load (0.000272)[0m   [0mSELECT * FROM users WHERE (users."login" = 'quentin') LIMIT 1[0m
+  [4;36;1mSQL (0.000205)[0m   [0;1mSELECT count(*) AS count_all FROM users [0m
+  [4;35;1mUser Load (0.000174)[0m   [0mSELECT * FROM users WHERE (LOWER(users.login) = 'quire') LIMIT 1[0m
+  [4;36;1mUser Load (0.000205)[0m   [0;1mSELECT * FROM users WHERE (users.email IS NULL) LIMIT 1[0m
+  [4;35;1mSQL (0.000167)[0m   [0mSELECT count(*) AS count_all FROM users [0m
+  [4;36;1mSQL (0.000242)[0m   [0;1mSELECT count(*) AS count_all FROM users [0m
+  [4;35;1mUser Load (0.000177)[0m   [0mSELECT * FROM users WHERE (LOWER(users.login) = 'quire') LIMIT 1[0m
+  [4;36;1mUser Load (0.000134)[0m   [0;1mSELECT * FROM users WHERE (LOWER(users.email) = 'quire@example.com') LIMIT 1[0m
+  [4;35;1mSQL (0.000146)[0m   [0mSELECT count(*) AS count_all FROM users [0m
+  [4;36;1mSQL (0.000176)[0m   [0;1mSELECT count(*) AS count_all FROM users [0m
+  [4;35;1mUser Load (0.000146)[0m   [0mSELECT * FROM users WHERE (LOWER(users.login) = 'quire') LIMIT 1[0m
+  [4;36;1mUser Load (0.000131)[0m   [0;1mSELECT * FROM users WHERE (LOWER(users.email) = 'quire@example.com') LIMIT 1[0m
+  [4;35;1mSQL (0.000160)[0m   [0mSELECT count(*) AS count_all FROM users [0m
+  [4;36;1mSQL (0.000245)[0m   [0;1mSELECT count(*) AS count_all FROM users [0m
+  [4;35;1mUser Load (0.000134)[0m   [0mSELECT * FROM users WHERE (users.login IS NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000130)[0m   [0;1mSELECT * FROM users WHERE (LOWER(users.email) = 'quire@example.com') LIMIT 1[0m
+  [4;35;1mSQL (0.000180)[0m   [0mSELECT count(*) AS count_all FROM users [0m
+  [4;36;1mUser Load (0.000330)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) [0m
+Rendering users/xrds.xml.erb
+  [4;35;1mUser Load (0.000399)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) [0m
+Rendering users/xrds.xml.erb
+Rendering servers/xrds.xml.erb
+  [4;36;1mSQL (0.000251)[0m   [0;1mSELECT count(*) AS count_all FROM users [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2008-06-23 15:34:15) [POST]
+  Session ID: 
+  Parameters: {"user"=>{"password_confirmation"=>"quire", "password"=>"quire", "login"=>"quire", "email"=>nil}, "action"=>"create", "controller"=>"users"}
+--
+REMOTE_ADDR::0.0.0.0
+REQUEST_URI::/users?user%5Bemail%5D=&user%5Blogin%5D=quire&user%5Bpassword%5D=quire&user%5Bpassword_confirmation%5D=quire
+SERVER_PORT::80
+REQUEST_METHOD::POST
+--
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+  [4;35;1mUser Load (0.000252)[0m   [0mSELECT * FROM users WHERE (LOWER(users.login) = 'quire') LIMIT 1[0m
+  [4;36;1mUser Load (0.000115)[0m   [0;1mSELECT * FROM users WHERE (users.email IS NULL) LIMIT 1[0m
+Rendering template within layouts/default
+Rendering users/new
+Completed in 0.00687 (145 reqs/sec) | Rendering: 0.00051 (7%) | DB: 0.00062 (9%) | 200 OK [http://test.host/users?user%5Bemail%5D=&user%5Blogin%5D=quire&user%5Bpassword%5D=quire&user%5Bpassword_confirmation%5D=quire]
+  [4;35;1mSQL (0.000161)[0m   [0mSELECT count(*) AS count_all FROM users [0m
+  [4;36;1mSQL (0.000230)[0m   [0;1mSELECT count(*) AS count_all FROM users [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2008-06-23 15:34:15) [POST]
+  Session ID: 
+  Parameters: {"user"=>{"password_confirmation"=>nil, "password"=>"quire", "login"=>"quire", "email"=>"quire@example.com"}, "action"=>"create", "controller"=>"users"}
+--
+REMOTE_ADDR::0.0.0.0
+REQUEST_URI::/users?user%5Bemail%5D=quire%40example.com&user%5Blogin%5D=quire&user%5Bpassword%5D=quire&user%5Bpassword_confirmation%5D=
+SERVER_PORT::80
+REQUEST_METHOD::POST
+--
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+  [4;35;1mUser Load (0.000160)[0m   [0mSELECT * FROM users WHERE (LOWER(users.login) = 'quire') LIMIT 1[0m
+  [4;36;1mUser Load (0.000122)[0m   [0;1mSELECT * FROM users WHERE (LOWER(users.email) = 'quire@example.com') LIMIT 1[0m
+Rendering template within layouts/default
+Rendering users/new
+Completed in 0.00198 (506 reqs/sec) | Rendering: 0.00031 (15%) | DB: 0.00067 (34%) | 200 OK [http://test.host/users?user%5Bemail%5D=quire%40example.com&user%5Blogin%5D=quire&user%5Bpassword%5D=quire&user%5Bpassword_confirmation%5D=]
+  [4;35;1mSQL (0.000139)[0m   [0mSELECT count(*) AS count_all FROM users [0m
+  [4;36;1mSQL (0.000177)[0m   [0;1mSELECT count(*) AS count_all FROM users [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2008-06-23 15:34:15) [POST]
+  Session ID: 
+  Parameters: {"user"=>{"password_confirmation"=>"quire", "password"=>nil, "login"=>"quire", "email"=>"quire@example.com"}, "action"=>"create", "controller"=>"users"}
+--
+REMOTE_ADDR::0.0.0.0
+REQUEST_URI::/users?user%5Bemail%5D=quire%40example.com&user%5Blogin%5D=quire&user%5Bpassword%5D=&user%5Bpassword_confirmation%5D=quire
+SERVER_PORT::80
+REQUEST_METHOD::POST
+--
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+  [4;35;1mUser Load (0.000154)[0m   [0mSELECT * FROM users WHERE (LOWER(users.login) = 'quire') LIMIT 1[0m
+  [4;36;1mUser Load (0.000121)[0m   [0;1mSELECT * FROM users WHERE (LOWER(users.email) = 'quire@example.com') LIMIT 1[0m
+Rendering template within layouts/default
+Rendering users/new
+Completed in 0.00182 (549 reqs/sec) | Rendering: 0.00025 (13%) | DB: 0.00059 (32%) | 200 OK [http://test.host/users?user%5Bemail%5D=quire%40example.com&user%5Blogin%5D=quire&user%5Bpassword%5D=&user%5Bpassword_confirmation%5D=quire]
+  [4;35;1mSQL (0.000136)[0m   [0mSELECT count(*) AS count_all FROM users [0m
+  [4;36;1mSQL (0.000207)[0m   [0;1mSELECT count(*) AS count_all FROM users [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2008-06-23 15:34:15) [POST]
+  Session ID: 
+  Parameters: {"user"=>{"password_confirmation"=>"quire", "password"=>"quire", "login"=>nil, "email"=>"quire@example.com"}, "action"=>"create", "controller"=>"users"}
+--
+REMOTE_ADDR::0.0.0.0
+REQUEST_URI::/users?user%5Bemail%5D=quire%40example.com&user%5Blogin%5D=&user%5Bpassword%5D=quire&user%5Bpassword_confirmation%5D=quire
+SERVER_PORT::80
+REQUEST_METHOD::POST
+--
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+  [4;35;1mUser Load (0.000142)[0m   [0mSELECT * FROM users WHERE (users.login IS NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000125)[0m   [0;1mSELECT * FROM users WHERE (LOWER(users.email) = 'quire@example.com') LIMIT 1[0m
+Rendering template within layouts/default
+Rendering users/new
+Completed in 0.00184 (542 reqs/sec) | Rendering: 0.00026 (14%) | DB: 0.00061 (33%) | 200 OK [http://test.host/users?user%5Bemail%5D=quire%40example.com&user%5Blogin%5D=&user%5Bpassword%5D=quire&user%5Bpassword_confirmation%5D=quire]
+  [4;35;1mSQL (0.000290)[0m   [0mSELECT count(*) AS count_all FROM users [0m
+  [4;36;1mSQL (0.000212)[0m   [0;1mSELECT count(*) AS count_all FROM users [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2008-06-23 15:34:15) [POST]
+  Session ID: 
+  Parameters: {"user"=>{"password_confirmation"=>"quire", "password"=>"quire", "login"=>"quire", "email"=>"quire@example.com"}, "action"=>"create", "controller"=>"users"}
+--
+REMOTE_ADDR::0.0.0.0
+REQUEST_URI::/users?user%5Bemail%5D=quire%40example.com&user%5Blogin%5D=quire&user%5Bpassword%5D=quire&user%5Bpassword_confirmation%5D=quire
+SERVER_PORT::80
+REQUEST_METHOD::POST
+--
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+  [4;35;1mUser Load (0.000162)[0m   [0mSELECT * FROM users WHERE (LOWER(users.login) = 'quire') LIMIT 1[0m
+  [4;36;1mUser Load (0.000123)[0m   [0;1mSELECT * FROM users WHERE (LOWER(users.email) = 'quire@example.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.000376)[0m   [0mINSERT INTO users ("salt", "updated_at", "crypted_password", "remember_token_expires_at", "remember_token", "login", "created_at", "email") VALUES('a9d8f4f1534ba10d2cef32278a111ca4a40d5717', '2008-06-23 15:34:15', '9091691ad48de90d53b9c06fdcfc0055126157ce', NULL, NULL, 'quire', '2008-06-23 15:34:15', 'quire@example.com')[0m
+Redirected to http://test.host/
+Completed in 0.00294 (340 reqs/sec) | DB: 0.00116 (39%) | 302 Found [http://test.host/users?user%5Bemail%5D=quire%40example.com&user%5Blogin%5D=quire&user%5Bpassword%5D=quire&user%5Bpassword_confirmation%5D=quire]
+  [4;36;1mSQL (0.000141)[0m   [0;1mSELECT count(*) AS count_all FROM users [0m
+
+
+Processing UsersController#xrds (for 0.0.0.0 at 2008-06-23 15:34:15) [GET]
+  Session ID: 
+  Parameters: {"action"=>"xrds", "id"=>"1", "controller"=>"users"}
+--
+REMOTE_ADDR::0.0.0.0
+REQUEST_URI::/users/1/xrds
+SERVER_PORT::80
+REQUEST_METHOD::GET
+--
+  [4;35;1mUser Load (0.000410)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) [0m
+Rendering users/xrds.xml.erb
+Completed in 0.00216 (463 reqs/sec) | Rendering: 0.00084 (38%) | DB: 0.00055 (25%) | 200 OK [http://test.host/users/1/xrds]
+
+
+Processing UsersController#xrds (for 0.0.0.0 at 2008-06-23 15:34:15) [GET]
+  Session ID: 
+  Parameters: {"action"=>"xrds", "id"=>"1000", "controller"=>"users"}
+--
+REMOTE_ADDR::0.0.0.0
+REQUEST_URI::/users/1000/xrds
+SERVER_PORT::80
+REQUEST_METHOD::GET
+--
+  [4;36;1mUser Load (0.000189)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1000) [0m
+  [4;35;1mUser Load (0.000339)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) [0m
+  [4;36;1mUser Update (0.000369)[0m   [0;1mUPDATE users SET "created_at" = '2008-06-18 15:34:15', "email" = 'quentin@example.com', "remember_token" = '4aedae1511f17311bf0aa77308f749092f92abb7', "login" = 'quentin', "remember_token_expires_at" = '2008-07-07 06:34:15', "crypted_password" = '00742970dc9e6319f8019fd54864d3ea740f04b1', "updated_at" = '2008-06-23 15:34:15', "salt" = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd' WHERE "id" = 1[0m
+
+
+Processing SessionsController#new (for 0.0.0.0 at 2008-06-23 15:34:15) [GET]
+  Session ID: 
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+--
+REMOTE_ADDR::0.0.0.0
+REQUEST_URI::/session/new
+SERVER_PORT::80
+REQUEST_METHOD::GET
+--
+Rendering template within layouts/default
+Rendering sessions/new
+Completed in 0.00281 (355 reqs/sec) | Rendering: 0.00035 (12%) | DB: 0.00071 (25%) | 200 OK [http://test.host/session/new]
+  [4;35;1mUser Load (0.000175)[0m   [0mSELECT * FROM users WHERE (users."remember_token" = 'invalid_auth_token') LIMIT 1[0m
+  [4;36;1mUser Load (0.001112)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) [0m
+  [4;35;1mUser Update (0.000321)[0m   [0mUPDATE users SET "created_at" = '2008-06-18 15:34:15', "email" = 'quentin@example.com', "remember_token" = '4aedae1511f17311bf0aa77308f749092f92abb7', "login" = 'quentin', "remember_token_expires_at" = '2008-07-07 06:34:15', "crypted_password" = '00742970dc9e6319f8019fd54864d3ea740f04b1', "updated_at" = '2008-06-23 15:34:15', "salt" = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd' WHERE "id" = 1[0m
+  [4;36;1mUser Update (0.000106)[0m   [0;1mUPDATE users SET "created_at" = '2008-06-18 15:34:15', "email" = 'quentin@example.com', "remember_token" = '4aedae1511f17311bf0aa77308f749092f92abb7', "login" = 'quentin', "remember_token_expires_at" = '2008-06-23 15:29:15', "crypted_password" = '00742970dc9e6319f8019fd54864d3ea740f04b1', "updated_at" = '2008-06-23 15:34:15', "salt" = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd' WHERE "id" = 1[0m
+
+
+Processing SessionsController#new (for 0.0.0.0 at 2008-06-23 15:34:15) [GET]
+  Session ID: 
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+--
+REMOTE_ADDR::0.0.0.0
+REQUEST_URI::/session/new
+SERVER_PORT::80
+REQUEST_METHOD::GET
+--
+Rendering template within layouts/default
+Rendering sessions/new
+Completed in 0.00054 (1845 reqs/sec) | Rendering: 0.00023 (41%) | DB: 0.00171 (316%) | 200 OK [http://test.host/session/new]
+  [4;35;1mUser Load (0.000299)[0m   [0mSELECT * FROM users WHERE (users."remember_token" = '4aedae1511f17311bf0aa77308f749092f92abb7') LIMIT 1[0m
+  [4;36;1mUser Load (0.000364)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) [0m
+  [4;35;1mUser Update (0.000318)[0m   [0mUPDATE users SET "created_at" = '2008-06-18 15:34:15', "email" = 'quentin@example.com', "remember_token" = '4aedae1511f17311bf0aa77308f749092f92abb7', "login" = 'quentin', "remember_token_expires_at" = '2008-07-07 06:34:15', "crypted_password" = '00742970dc9e6319f8019fd54864d3ea740f04b1', "updated_at" = '2008-06-23 15:34:15', "salt" = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd' WHERE "id" = 1[0m
+
+
+Processing SessionsController#new (for 0.0.0.0 at 2008-06-23 15:34:15) [GET]
+  Session ID: 
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+--
+REMOTE_ADDR::0.0.0.0
+REQUEST_URI::/session/new
+SERVER_PORT::80
+REQUEST_METHOD::GET
+--
+Rendering template within layouts/default
+Rendering sessions/new
+Completed in 0.00054 (1865 reqs/sec) | Rendering: 0.00022 (41%) | DB: 0.00098 (183%) | 200 OK [http://test.host/session/new]
+  [4;36;1mUser Load (0.000294)[0m   [0;1mSELECT * FROM users WHERE (users."remember_token" = '4aedae1511f17311bf0aa77308f749092f92abb7') LIMIT 1[0m
+Cookie set: auth_token=4aedae1511f17311bf0aa77308f749092f92abb7; path=/; expires=Sun, 06 Jul 2008 21:34:15 GMT
+  [4;35;1mUser Load (0.000331)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) [0m
+
+
+Processing SessionsController#destroy (for 0.0.0.0 at 2008-06-23 15:34:15) [GET]
+  Session ID: 
+  Parameters: {"action"=>"destroy", "controller"=>"sessions"}
+--
+REMOTE_ADDR::0.0.0.0
+REQUEST_URI::/session
+SERVER_PORT::80
+REQUEST_METHOD::GET
+--
+  [4;36;1mUser Load (0.000312)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;35;1mUser Update (0.000452)[0m   [0mUPDATE users SET "created_at" = '2008-06-18 15:34:15', "email" = 'quentin@example.com', "remember_token" = NULL, "login" = 'quentin', "remember_token_expires_at" = NULL, "crypted_password" = '00742970dc9e6319f8019fd54864d3ea740f04b1', "updated_at" = '2008-06-23 15:34:15', "salt" = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd' WHERE "id" = 1[0m
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+Redirected to http://test.host/
+Completed in 0.00226 (442 reqs/sec) | DB: 0.00139 (61%) | 302 Found [http://test.host/session]
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2008-06-23 15:34:15) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"sessions", "password"=>"test", "login"=>"quentin", "remember_me"=>"0"}
+--
+REMOTE_ADDR::0.0.0.0
+REQUEST_URI::/session?login=quentin&password=test&remember_me=0
+SERVER_PORT::80
+REQUEST_METHOD::POST
+--
+  [4;36;1mUser Load (0.000364)[0m   [0;1mSELECT * FROM users WHERE (users."login" = 'quentin') LIMIT 1[0m
+Redirected to http://test.host/session
+Completed in 0.00117 (851 reqs/sec) | DB: 0.00036 (30%) | 302 Found [http://test.host/session?login=quentin&password=test&remember_me=0]
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2008-06-23 15:34:15) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"sessions", "password"=>"test", "login"=>"quentin", "remember_me"=>"1"}
+--
+REMOTE_ADDR::0.0.0.0
+REQUEST_URI::/session?login=quentin&password=test&remember_me=1
+SERVER_PORT::80
+REQUEST_METHOD::POST
+--
+  [4;35;1mUser Load (0.000346)[0m   [0mSELECT * FROM users WHERE (users."login" = 'quentin') LIMIT 1[0m
+  [4;36;1mUser Update (0.000334)[0m   [0;1mUPDATE users SET "created_at" = '2008-06-18 15:34:15', "email" = 'quentin@example.com', "remember_token" = '4aedae1511f17311bf0aa77308f749092f92abb7', "login" = 'quentin', "remember_token_expires_at" = '2008-07-07 06:34:15', "crypted_password" = '00742970dc9e6319f8019fd54864d3ea740f04b1', "updated_at" = '2008-06-23 15:34:15', "salt" = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd' WHERE "id" = 1[0m
+Cookie set: auth_token=4aedae1511f17311bf0aa77308f749092f92abb7; path=/; expires=Mon, 07 Jul 2008 06:34:15 GMT
+Redirected to http://test.host/session
+Completed in 0.00244 (410 reqs/sec) | DB: 0.00068 (27%) | 302 Found [http://test.host/session?login=quentin&password=test&remember_me=1]
+  [4;35;1mUser Load (0.000326)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) [0m
+
+
+Processing SessionsController#destroy (for 0.0.0.0 at 2008-06-23 15:34:15) [GET]
+  Session ID: 
+  Parameters: {"action"=>"destroy", "controller"=>"sessions"}
+--
+REMOTE_ADDR::0.0.0.0
+REQUEST_URI::/session
+SERVER_PORT::80
+REQUEST_METHOD::GET
+--
+  [4;36;1mUser Load (0.000265)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;35;1mUser Update (0.000278)[0m   [0mUPDATE users SET "created_at" = '2008-06-18 15:34:15', "email" = 'quentin@example.com', "remember_token" = NULL, "login" = 'quentin', "remember_token_expires_at" = NULL, "crypted_password" = '00742970dc9e6319f8019fd54864d3ea740f04b1', "updated_at" = '2008-06-23 15:34:15', "salt" = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd' WHERE "id" = 1[0m
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+Redirected to http://test.host/
+Completed in 0.00184 (542 reqs/sec) | DB: 0.00087 (47%) | 302 Found [http://test.host/session]
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2008-06-23 15:34:15) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"sessions", "password"=>"bad password", "login"=>"quentin"}
+--
+REMOTE_ADDR::0.0.0.0
+REQUEST_URI::/session?login=quentin&password=bad+password
+SERVER_PORT::80
+REQUEST_METHOD::POST
+--
+  [4;36;1mUser Load (0.000364)[0m   [0;1mSELECT * FROM users WHERE (users."login" = 'quentin') LIMIT 1[0m
+Rendering template within layouts/default
+Rendering sessions/new
+Completed in 0.00135 (740 reqs/sec) | Rendering: 0.00027 (20%) | DB: 0.00036 (26%) | 200 OK [http://test.host/session?login=quentin&password=bad+password]
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2008-06-23 15:34:15) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"sessions", "password"=>"test", "login"=>"quentin"}
+--
+REMOTE_ADDR::0.0.0.0
+REQUEST_URI::/session?login=quentin&password=test
+SERVER_PORT::80
+REQUEST_METHOD::POST
+--
+  [4;35;1mUser Load (0.000367)[0m   [0mSELECT * FROM users WHERE (users."login" = 'quentin') LIMIT 1[0m
+Redirected to http://test.host/session
+Completed in 0.00109 (914 reqs/sec) | DB: 0.00037 (33%) | 302 Found [http://test.host/session?login=quentin&password=test]
+  [4;36;1mOpenidAssociation Load (0.000306)[0m   [0;1mSELECT * FROM openid_associations WHERE (openid_associations."id" = 1) [0m
+
+
+Processing ServersController#show (for 0.0.0.0 at 2008-06-23 15:34:15) [GET]
+  Session ID: 
+  Parameters: {"openid.mode"=>"checkid_setup", "openid.claimed_id"=>"http://specs.openid.net/auth/2.0/identifier_select", "openid.return_to"=>"http://localhost:8080/session/", "openid.ns"=>"http://specs.openid.net/auth/2.0", "action"=>"show", "controller"=>"servers", "openid.identity"=>"http://specs.openid.net/auth/2.0/identifier_select", "openid.assoc_handle"=>"openid-assoc-handle", "openid.realm"=>"http://localhost:8080/session/"}
+--
+REMOTE_ADDR::0.0.0.0
+REQUEST_URI::/server?openid.assoc_handle=openid-assoc-handle&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.mode=checkid_setup&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.realm=http%3A%2F%2Flocalhost%3A8080%2Fsession%2F&openid.return_to=http%3A%2F%2Flocalhost%3A8080%2Fsession%2F
+SERVER_PORT::80
+REQUEST_METHOD::GET
+--
+  [4;35;1mOpenidAssociation Load (0.000313)[0m   [0mSELECT * FROM openid_associations WHERE (openid_associations."handle" = 'openid-assoc-handle') LIMIT 1[0m
+Redirected to http://localhost:8080/session/?openid.identity=1&openid.signed=op_endpoint,return_to,response_nonce,assoc_handle,claimed_id,identity&openid.sig=sQOVGSzie7AIjt/Sd2szckFMxaKqYJF0F390ii+p3yE=&openid.mode=id_res&openid.claimed_id=http://test.host/users/1&openid.ns=http://specs.openid.net/auth/2.0&openid.response_nonce=xhmfZb2008-06-23T06:34:15Z&openid.return_to=http://localhost:8080/session/&openid.assoc_handle=openid-assoc-handle&openid.op_endpoint=http://test.host/server
+Completed in 0.00503 (198 reqs/sec) | DB: 0.00062 (12%) | 302 Found [http://test.host/server?openid.assoc_handle=openid-assoc-handle&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.mode=checkid_setup&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.realm=http%3A%2F%2Flocalhost%3A8080%2Fsession%2F&openid.return_to=http%3A%2F%2Flocalhost%3A8080%2Fsession%2F]
+  [4;36;1mSQL (0.000231)[0m   [0;1mSELECT count(*) AS count_all FROM users [0m
+  [4;35;1mUser Load (0.000152)[0m   [0mSELECT * FROM users WHERE (LOWER(users.login) = 'quire') LIMIT 1[0m
+  [4;36;1mUser Load (0.000122)[0m   [0;1mSELECT * FROM users WHERE (LOWER(users.email) = 'quire@example.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.000380)[0m   [0mINSERT INTO users ("salt", "updated_at", "crypted_password", "remember_token_expires_at", "remember_token", "login", "created_at", "email") VALUES('a9d8f4f1534ba10d2cef32278a111ca4a40d5717', '2008-06-23 15:34:15', '9091691ad48de90d53b9c06fdcfc0055126157ce', NULL, NULL, 'quire', '2008-06-23 15:34:15', 'quire@example.com')[0m
+  [4;36;1mSQL (0.000230)[0m   [0;1mSELECT count(*) AS count_all FROM users [0m
+  [4;35;1mUser Load (0.000355)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) [0m
+  [4;36;1mUser Update (0.000379)[0m   [0;1mUPDATE users SET "created_at" = '2008-06-18 15:34:15', "email" = 'quentin@example.com', "remember_token" = '4aedae1511f17311bf0aa77308f749092f92abb7', "login" = 'quentin', "remember_token_expires_at" = '2008-07-07 06:34:15', "crypted_password" = '00742970dc9e6319f8019fd54864d3ea740f04b1', "updated_at" = '2008-06-23 15:34:15', "salt" = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd' WHERE "id" = 1[0m
+  [4;35;1mUser Load (0.000346)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) [0m
+  [4;36;1mUser Update (0.000422)[0m   [0;1mUPDATE users SET "created_at" = '2008-06-18 15:34:15', "email" = 'quentin@example.com', "remember_token" = '32941d5dfcdadc4f29ebec1cf7dc169ad1ba8204', "login" = 'quentin', "remember_token_expires_at" = '2008-06-30 06:34:15', "crypted_password" = '00742970dc9e6319f8019fd54864d3ea740f04b1', "updated_at" = '2008-06-23 15:34:15', "salt" = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd' WHERE "id" = 1[0m
+  [4;35;1mUser Load (0.000345)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) [0m
+  [4;36;1mUser Update (0.000335)[0m   [0;1mUPDATE users SET "created_at" = '2008-06-18 15:34:15', "email" = 'quentin@example.com', "remember_token" = '32941d5dfcdadc4f29ebec1cf7dc169ad1ba8204', "login" = 'quentin', "remember_token_expires_at" = '2008-06-30 06:34:15', "crypted_password" = '00742970dc9e6319f8019fd54864d3ea740f04b1', "updated_at" = '2008-06-23 15:34:15', "salt" = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd' WHERE "id" = 1[0m
+  [4;35;1mUser Load (0.000330)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) [0m
+  [4;36;1mUser Update (0.000300)[0m   [0;1mUPDATE users SET "created_at" = '2008-06-18 15:34:15', "email" = 'quentin@example.com', "remember_token" = '4aedae1511f17311bf0aa77308f749092f92abb7', "login" = 'quentin', "remember_token_expires_at" = '2008-07-07 06:34:15', "crypted_password" = '00742970dc9e6319f8019fd54864d3ea740f04b1', "updated_at" = '2008-06-23 15:34:15', "salt" = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd' WHERE "id" = 1[0m
+  [4;35;1mUser Update (0.000112)[0m   [0mUPDATE users SET "created_at" = '2008-06-18 15:34:15', "email" = 'quentin@example.com', "remember_token" = NULL, "login" = 'quentin', "remember_token_expires_at" = NULL, "crypted_password" = '00742970dc9e6319f8019fd54864d3ea740f04b1', "updated_at" = '2008-06-23 15:34:15', "salt" = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd' WHERE "id" = 1[0m
+  [4;36;1mUser Load (0.000405)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) [0m
+  [4;35;1mUser Update (0.000321)[0m   [0mUPDATE users SET "created_at" = '2008-06-18 15:34:15', "email" = 'quentin@example.com', "remember_token" = '4aedae1511f17311bf0aa77308f749092f92abb7', "login" = 'quentin', "remember_token_expires_at" = '2008-07-07 06:34:15', "crypted_password" = '00742970dc9e6319f8019fd54864d3ea740f04b1', "updated_at" = '2008-06-23 15:34:15', "salt" = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd' WHERE "id" = 1[0m
+  [4;36;1mUser Load (0.000464)[0m   [0;1mSELECT * FROM users WHERE (users."login" = 'quentin') LIMIT 1[0m
+  [4;35;1mUser Load (0.000323)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) [0m
+  [4;36;1mUser Load (0.000421)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) [0m
+  [4;35;1mUser Load (0.000180)[0m   [0mSELECT * FROM users WHERE (LOWER(users.login) = 'quentin2' AND users.id <> 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.000233)[0m   [0;1mSELECT * FROM users WHERE (LOWER(users.email) = 'quentin@example.com' AND users.id <> 1) LIMIT 1[0m
+  [4;35;1mUser Update (0.000482)[0m   [0mUPDATE users SET "created_at" = '2008-06-18 15:34:15', "email" = 'quentin@example.com', "remember_token" = NULL, "login" = 'quentin2', "remember_token_expires_at" = NULL, "crypted_password" = '00742970dc9e6319f8019fd54864d3ea740f04b1', "updated_at" = '2008-06-23 15:34:15', "salt" = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd' WHERE "id" = 1[0m
+  [4;36;1mUser Load (0.000459)[0m   [0;1mSELECT * FROM users WHERE (users."login" = 'quentin2') LIMIT 1[0m
+  [4;35;1mUser Load (0.000445)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) [0m
+  [4;36;1mUser Load (0.000165)[0m   [0;1mSELECT * FROM users WHERE (LOWER(users.login) = 'quentin' AND users.id <> 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.000142)[0m   [0mSELECT * FROM users WHERE (LOWER(users.email) = 'quentin@example.com' AND users.id <> 1) LIMIT 1[0m
+  [4;36;1mUser Update (0.000327)[0m   [0;1mUPDATE users SET "created_at" = '2008-06-18 15:34:15', "email" = 'quentin@example.com', "remember_token" = NULL, "login" = 'quentin', "remember_token_expires_at" = NULL, "crypted_password" = '4b6dd603c64f03bc2f676658e287094878df9603', "updated_at" = '2008-06-23 15:34:15', "salt" = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd' WHERE "id" = 1[0m
+  [4;35;1mUser Load (0.000287)[0m   [0mSELECT * FROM users WHERE (users."login" = 'quentin') LIMIT 1[0m
+  [4;36;1mSQL (0.001094)[0m   [0;1mSELECT count(*) AS count_all FROM users [0m
+  [4;35;1mUser Load (0.000443)[0m   [0mSELECT * FROM users WHERE (LOWER(users.login) = 'quire') LIMIT 1[0m
+  [4;36;1mUser Load (0.000242)[0m   [0;1mSELECT * FROM users WHERE (users.email IS NULL) LIMIT 1[0m
+  [4;35;1mSQL (0.000161)[0m   [0mSELECT count(*) AS count_all FROM users [0m
+  [4;36;1mSQL (0.000201)[0m   [0;1mSELECT count(*) AS count_all FROM users [0m
+  [4;35;1mUser Load (0.000151)[0m   [0mSELECT * FROM users WHERE (LOWER(users.login) = 'quire') LIMIT 1[0m
+  [4;36;1mUser Load (0.000130)[0m   [0;1mSELECT * FROM users WHERE (LOWER(users.email) = 'quire@example.com') LIMIT 1[0m
+  [4;35;1mSQL (0.000138)[0m   [0mSELECT count(*) AS count_all FROM users [0m
+  [4;36;1mSQL (0.000172)[0m   [0;1mSELECT count(*) AS count_all FROM users [0m
+  [4;35;1mUser Load (0.000142)[0m   [0mSELECT * FROM users WHERE (LOWER(users.login) = 'quire') LIMIT 1[0m
+  [4;36;1mUser Load (0.000131)[0m   [0;1mSELECT * FROM users WHERE (LOWER(users.email) = 'quire@example.com') LIMIT 1[0m
+  [4;35;1mSQL (0.000128)[0m   [0mSELECT count(*) AS count_all FROM users [0m
+  [4;36;1mSQL (0.000162)[0m   [0;1mSELECT count(*) AS count_all FROM users [0m
+  [4;35;1mUser Load (0.000124)[0m   [0mSELECT * FROM users WHERE (users.login IS NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000126)[0m   [0;1mSELECT * FROM users WHERE (LOWER(users.email) = 'quire@example.com') LIMIT 1[0m
+  [4;35;1mSQL (0.000162)[0m   [0mSELECT count(*) AS count_all FROM users [0m
+  [4;36;1mUser Load (0.000341)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) [0m
+Rendering users/xrds.xml.erb
+  [4;35;1mUser Load (0.000971)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) [0m
+Rendering users/xrds.xml.erb
+Rendering servers/xrds.xml.erb
+  [4;36;1mOpenidAssociation Load (0.000307)[0m   [0;1mSELECT * FROM openid_associations WHERE (openid_associations."id" = 1) [0m
+
+
+Processing ServersController#show (for 0.0.0.0 at 2008-06-23 15:38:51) [GET]
+  Session ID: 
+  Parameters: {"openid.claimed_id"=>"http://specs.openid.net/auth/2.0/identifier_select", "openid.return_to"=>"http://localhost:8080/session/", "openid.mode"=>"checkid_setup", "openid.ns"=>"http://specs.openid.net/auth/2.0", "action"=>"show", "controller"=>"servers", "openid.identity"=>"http://specs.openid.net/auth/2.0/identifier_select", "openid.assoc_handle"=>"openid-assoc-handle", "openid.realm"=>"http://localhost:8080/session/"}
+--
+REMOTE_ADDR::0.0.0.0
+REQUEST_URI::/server?openid.assoc_handle=openid-assoc-handle&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.mode=checkid_setup&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.realm=http%3A%2F%2Flocalhost%3A8080%2Fsession%2F&openid.return_to=http%3A%2F%2Flocalhost%3A8080%2Fsession%2F
+SERVER_PORT::80
+REQUEST_METHOD::GET
+--
+  [4;35;1mOpenidAssociation Load (0.000380)[0m   [0mSELECT * FROM openid_associations WHERE (openid_associations."handle" = 'openid-assoc-handle') LIMIT 1[0m
+Redirected to http://localhost:8080/session/?openid.claimed_id=http://test.host/users/1&openid.return_to=http://localhost:8080/session/&openid.ns=http://specs.openid.net/auth/2.0&openid.mode=id_res&openid.signed=op_endpoint,return_to,response_nonce,assoc_handle,claimed_id,identity&openid.op_endpoint=http://test.host/server&openid.sig=RuYS136Zl0WQqxUhcDdQMXsayBTlrlpk7dp+IICjLjk=&openid.response_nonce=P9q5eF2008-06-23T06:38:51Z&openid.assoc_handle=openid-assoc-handle&openid.identity=1
+Completed in 0.00534 (187 reqs/sec) | DB: 0.00069 (12%) | 302 Found [http://test.host/server?openid.assoc_handle=openid-assoc-handle&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.mode=checkid_setup&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.realm=http%3A%2F%2Flocalhost%3A8080%2Fsession%2F&openid.return_to=http%3A%2F%2Flocalhost%3A8080%2Fsession%2F]
+  [4;36;1mSQL (0.000265)[0m   [0;1mSELECT count(*) AS count_all FROM users [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2008-06-23 15:38:51) [POST]
+  Session ID: 
+  Parameters: {"user"=>{"password_confirmation"=>"quire", "login"=>"quire", "password"=>"quire", "email"=>nil}, "action"=>"create", "controller"=>"users"}
+--
+REMOTE_ADDR::0.0.0.0
+REQUEST_URI::/users?user%5Bemail%5D=&user%5Blogin%5D=quire&user%5Bpassword%5D=quire&user%5Bpassword_confirmation%5D=quire
+SERVER_PORT::80
+REQUEST_METHOD::POST
+--
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+  [4;35;1mUser Load (0.000240)[0m   [0mSELECT * FROM users WHERE (LOWER(users.login) = 'quire') LIMIT 1[0m
+  [4;36;1mUser Load (0.000111)[0m   [0;1mSELECT * FROM users WHERE (users.email IS NULL) LIMIT 1[0m
+Rendering template within layouts/default
+Rendering users/new
+Completed in 0.00559 (178 reqs/sec) | Rendering: 0.00046 (8%) | DB: 0.00062 (11%) | 200 OK [http://test.host/users?user%5Bemail%5D=&user%5Blogin%5D=quire&user%5Bpassword%5D=quire&user%5Bpassword_confirmation%5D=quire]
+  [4;35;1mSQL (0.000142)[0m   [0mSELECT count(*) AS count_all FROM users [0m
+  [4;36;1mSQL (0.000198)[0m   [0;1mSELECT count(*) AS count_all FROM users [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2008-06-23 15:38:51) [POST]
+  Session ID: 
+  Parameters: {"user"=>{"password_confirmation"=>nil, "login"=>"quire", "password"=>"quire", "email"=>"quire@example.com"}, "action"=>"create", "controller"=>"users"}
+--
+REMOTE_ADDR::0.0.0.0
+REQUEST_URI::/users?user%5Bemail%5D=quire%40example.com&user%5Blogin%5D=quire&user%5Bpassword%5D=quire&user%5Bpassword_confirmation%5D=
+SERVER_PORT::80
+REQUEST_METHOD::POST
+--
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+  [4;35;1mUser Load (0.000162)[0m   [0mSELECT * FROM users WHERE (LOWER(users.login) = 'quire') LIMIT 1[0m
+  [4;36;1mUser Load (0.000121)[0m   [0;1mSELECT * FROM users WHERE (LOWER(users.email) = 'quire@example.com') LIMIT 1[0m
+Rendering template within layouts/default
+Rendering users/new
+Completed in 0.00188 (531 reqs/sec) | Rendering: 0.00025 (13%) | DB: 0.00062 (33%) | 200 OK [http://test.host/users?user%5Bemail%5D=quire%40example.com&user%5Blogin%5D=quire&user%5Bpassword%5D=quire&user%5Bpassword_confirmation%5D=]
+  [4;35;1mSQL (0.000194)[0m   [0mSELECT count(*) AS count_all FROM users [0m
+  [4;36;1mSQL (0.000192)[0m   [0;1mSELECT count(*) AS count_all FROM users [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2008-06-23 15:38:51) [POST]
+  Session ID: 
+  Parameters: {"user"=>{"password_confirmation"=>"quire", "login"=>"quire", "password"=>nil, "email"=>"quire@example.com"}, "action"=>"create", "controller"=>"users"}
+--
+REMOTE_ADDR::0.0.0.0
+REQUEST_URI::/users?user%5Bemail%5D=quire%40example.com&user%5Blogin%5D=quire&user%5Bpassword%5D=&user%5Bpassword_confirmation%5D=quire
+SERVER_PORT::80
+REQUEST_METHOD::POST
+--
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+  [4;35;1mUser Load (0.000139)[0m   [0mSELECT * FROM users WHERE (LOWER(users.login) = 'quire') LIMIT 1[0m
+  [4;36;1mUser Load (0.000122)[0m   [0;1mSELECT * FROM users WHERE (LOWER(users.email) = 'quire@example.com') LIMIT 1[0m
+Rendering template within layouts/default
+Rendering users/new
+Completed in 0.00178 (562 reqs/sec) | Rendering: 0.00025 (13%) | DB: 0.00065 (36%) | 200 OK [http://test.host/users?user%5Bemail%5D=quire%40example.com&user%5Blogin%5D=quire&user%5Bpassword%5D=&user%5Bpassword_confirmation%5D=quire]
+  [4;35;1mSQL (0.000131)[0m   [0mSELECT count(*) AS count_all FROM users [0m
+  [4;36;1mSQL (0.000217)[0m   [0;1mSELECT count(*) AS count_all FROM users [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2008-06-23 15:38:51) [POST]
+  Session ID: 
+  Parameters: {"user"=>{"password_confirmation"=>"quire", "login"=>nil, "password"=>"quire", "email"=>"quire@example.com"}, "action"=>"create", "controller"=>"users"}
+--
+REMOTE_ADDR::0.0.0.0
+REQUEST_URI::/users?user%5Bemail%5D=quire%40example.com&user%5Blogin%5D=&user%5Bpassword%5D=quire&user%5Bpassword_confirmation%5D=quire
+SERVER_PORT::80
+REQUEST_METHOD::POST
+--
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+  [4;35;1mUser Load (0.000237)[0m   [0mSELECT * FROM users WHERE (users.login IS NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000161)[0m   [0;1mSELECT * FROM users WHERE (LOWER(users.email) = 'quire@example.com') LIMIT 1[0m
+Rendering template within layouts/default
+Rendering users/new
+Completed in 0.00246 (406 reqs/sec) | Rendering: 0.00032 (13%) | DB: 0.00075 (30%) | 200 OK [http://test.host/users?user%5Bemail%5D=quire%40example.com&user%5Blogin%5D=&user%5Bpassword%5D=quire&user%5Bpassword_confirmation%5D=quire]
+  [4;35;1mSQL (0.000212)[0m   [0mSELECT count(*) AS count_all FROM users [0m
+  [4;36;1mSQL (0.000244)[0m   [0;1mSELECT count(*) AS count_all FROM users [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2008-06-23 15:38:51) [POST]
+  Session ID: 
+  Parameters: {"user"=>{"password_confirmation"=>"quire", "login"=>"quire", "password"=>"quire", "email"=>"quire@example.com"}, "action"=>"create", "controller"=>"users"}
+--
+REMOTE_ADDR::0.0.0.0
+REQUEST_URI::/users?user%5Bemail%5D=quire%40example.com&user%5Blogin%5D=quire&user%5Bpassword%5D=quire&user%5Bpassword_confirmation%5D=quire
+SERVER_PORT::80
+REQUEST_METHOD::POST
+--
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+  [4;35;1mUser Load (0.000263)[0m   [0mSELECT * FROM users WHERE (LOWER(users.login) = 'quire') LIMIT 1[0m
+  [4;36;1mUser Load (0.000135)[0m   [0;1mSELECT * FROM users WHERE (LOWER(users.email) = 'quire@example.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.000422)[0m   [0mINSERT INTO users ("salt", "updated_at", "crypted_password", "remember_token_expires_at", "remember_token", "login", "created_at", "email") VALUES('cae04324aebf555cdeb6bdbbe835a28019f75888', '2008-06-23 15:38:51', '3fbf41b873e31ca7c8ff898eb0fbcf4f97c07e13', NULL, NULL, 'quire', '2008-06-23 15:38:51', 'quire@example.com')[0m
+Redirected to http://test.host/
+Completed in 0.00328 (304 reqs/sec) | DB: 0.00128 (38%) | 302 Found [http://test.host/users?user%5Bemail%5D=quire%40example.com&user%5Blogin%5D=quire&user%5Bpassword%5D=quire&user%5Bpassword_confirmation%5D=quire]
+  [4;36;1mSQL (0.000173)[0m   [0;1mSELECT count(*) AS count_all FROM users [0m
+
+
+Processing UsersController#xrds (for 0.0.0.0 at 2008-06-23 15:38:51) [GET]
+  Session ID: 
+  Parameters: {"action"=>"xrds", "id"=>"1", "controller"=>"users"}
+--
+REMOTE_ADDR::0.0.0.0
+REQUEST_URI::/users/1/xrds
+SERVER_PORT::80
+REQUEST_METHOD::GET
+--
+  [4;35;1mUser Load (0.000396)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) [0m
+Rendering users/xrds.xml.erb
+Completed in 0.00196 (510 reqs/sec) | Rendering: 0.00070 (35%) | DB: 0.00057 (29%) | 200 OK [http://test.host/users/1/xrds]
+
+
+Processing UsersController#xrds (for 0.0.0.0 at 2008-06-23 15:38:51) [GET]
+  Session ID: 
+  Parameters: {"action"=>"xrds", "id"=>"1000", "controller"=>"users"}
+--
+REMOTE_ADDR::0.0.0.0
+REQUEST_URI::/users/1000/xrds
+SERVER_PORT::80
+REQUEST_METHOD::GET
+--
+  [4;36;1mUser Load (0.000182)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1000) [0m
+  [4;35;1mUser Load (0.000465)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) [0m
+  [4;36;1mUser Update (0.000876)[0m   [0;1mUPDATE users SET "created_at" = '2008-06-18 15:38:51', "email" = 'quentin@example.com', "remember_token" = 'f8ff60ec082e55cf38e4c301e6a74390fd308baf', "login" = 'quentin', "remember_token_expires_at" = '2008-07-07 06:38:51', "crypted_password" = '00742970dc9e6319f8019fd54864d3ea740f04b1', "updated_at" = '2008-06-23 15:38:51', "salt" = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd' WHERE "id" = 1[0m
+
+
+Processing SessionsController#new (for 0.0.0.0 at 2008-06-23 15:38:51) [GET]
+  Session ID: 
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+--
+REMOTE_ADDR::0.0.0.0
+REQUEST_URI::/session/new
+SERVER_PORT::80
+REQUEST_METHOD::GET
+--
+Rendering template within layouts/default
+Rendering sessions/new
+Completed in 0.00313 (319 reqs/sec) | Rendering: 0.00039 (12%) | DB: 0.00134 (42%) | 200 OK [http://test.host/session/new]
+  [4;35;1mUser Load (0.000179)[0m   [0mSELECT * FROM users WHERE (users."remember_token" = 'invalid_auth_token') LIMIT 1[0m
+  [4;36;1mUser Load (0.000330)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) [0m
+  [4;35;1mUser Update (0.000304)[0m   [0mUPDATE users SET "created_at" = '2008-06-18 15:38:51', "email" = 'quentin@example.com', "remember_token" = 'f8ff60ec082e55cf38e4c301e6a74390fd308baf', "login" = 'quentin', "remember_token_expires_at" = '2008-07-07 06:38:51', "crypted_password" = '00742970dc9e6319f8019fd54864d3ea740f04b1', "updated_at" = '2008-06-23 15:38:51', "salt" = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd' WHERE "id" = 1[0m
+  [4;36;1mUser Update (0.000153)[0m   [0;1mUPDATE users SET "created_at" = '2008-06-18 15:38:51', "email" = 'quentin@example.com', "remember_token" = 'f8ff60ec082e55cf38e4c301e6a74390fd308baf', "login" = 'quentin', "remember_token_expires_at" = '2008-06-23 15:33:51', "crypted_password" = '00742970dc9e6319f8019fd54864d3ea740f04b1', "updated_at" = '2008-06-23 15:38:51', "salt" = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd' WHERE "id" = 1[0m
+
+
+Processing SessionsController#new (for 0.0.0.0 at 2008-06-23 15:38:51) [GET]
+  Session ID: 
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+--
+REMOTE_ADDR::0.0.0.0
+REQUEST_URI::/session/new
+SERVER_PORT::80
+REQUEST_METHOD::GET
+--
+Rendering template within layouts/default
+Rendering sessions/new
+Completed in 0.00061 (1631 reqs/sec) | Rendering: 0.00024 (38%) | DB: 0.00097 (157%) | 200 OK [http://test.host/session/new]
+  [4;35;1mUser Load (0.000310)[0m   [0mSELECT * FROM users WHERE (users."remember_token" = 'f8ff60ec082e55cf38e4c301e6a74390fd308baf') LIMIT 1[0m
+  [4;36;1mUser Load (0.000317)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) [0m
+  [4;35;1mUser Update (0.000296)[0m   [0mUPDATE users SET "created_at" = '2008-06-18 15:38:51', "email" = 'quentin@example.com', "remember_token" = 'f8ff60ec082e55cf38e4c301e6a74390fd308baf', "login" = 'quentin', "remember_token_expires_at" = '2008-07-07 06:38:51', "crypted_password" = '00742970dc9e6319f8019fd54864d3ea740f04b1', "updated_at" = '2008-06-23 15:38:51', "salt" = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd' WHERE "id" = 1[0m
+
+
+Processing SessionsController#new (for 0.0.0.0 at 2008-06-23 15:38:51) [GET]
+  Session ID: 
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+--
+REMOTE_ADDR::0.0.0.0
+REQUEST_URI::/session/new
+SERVER_PORT::80
+REQUEST_METHOD::GET
+--
+Rendering template within layouts/default
+Rendering sessions/new
+Completed in 0.00052 (1931 reqs/sec) | Rendering: 0.00022 (41%) | DB: 0.00092 (178%) | 200 OK [http://test.host/session/new]
+  [4;36;1mUser Load (0.000292)[0m   [0;1mSELECT * FROM users WHERE (users."remember_token" = 'f8ff60ec082e55cf38e4c301e6a74390fd308baf') LIMIT 1[0m
+Cookie set: auth_token=f8ff60ec082e55cf38e4c301e6a74390fd308baf; path=/; expires=Sun, 06 Jul 2008 21:38:51 GMT
+  [4;35;1mUser Load (0.000318)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) [0m
+
+
+Processing SessionsController#destroy (for 0.0.0.0 at 2008-06-23 15:38:51) [GET]
+  Session ID: 
+  Parameters: {"action"=>"destroy", "controller"=>"sessions"}
+--
+REMOTE_ADDR::0.0.0.0
+REQUEST_URI::/session
+SERVER_PORT::80
+REQUEST_METHOD::GET
+--
+  [4;36;1mUser Load (0.000336)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;35;1mUser Update (0.000369)[0m   [0mUPDATE users SET "created_at" = '2008-06-18 15:38:51', "email" = 'quentin@example.com', "remember_token" = NULL, "login" = 'quentin', "remember_token_expires_at" = NULL, "crypted_password" = '00742970dc9e6319f8019fd54864d3ea740f04b1', "updated_at" = '2008-06-23 15:38:51', "salt" = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd' WHERE "id" = 1[0m
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+Redirected to http://test.host/
+Completed in 0.00287 (347 reqs/sec) | DB: 0.00132 (45%) | 302 Found [http://test.host/session]
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2008-06-23 15:38:51) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"sessions", "login"=>"quentin", "password"=>"test", "remember_me"=>"0"}
+--
+REMOTE_ADDR::0.0.0.0
+REQUEST_URI::/session?login=quentin&password=test&remember_me=0
+SERVER_PORT::80
+REQUEST_METHOD::POST
+--
+  [4;36;1mUser Load (0.000350)[0m   [0;1mSELECT * FROM users WHERE (users."login" = 'quentin') LIMIT 1[0m
+Redirected to http://test.host/session
+Completed in 0.00139 (716 reqs/sec) | DB: 0.00035 (25%) | 302 Found [http://test.host/session?login=quentin&password=test&remember_me=0]
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2008-06-23 15:38:51) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"sessions", "login"=>"quentin", "password"=>"test", "remember_me"=>"1"}
+--
+REMOTE_ADDR::0.0.0.0
+REQUEST_URI::/session?login=quentin&password=test&remember_me=1
+SERVER_PORT::80
+REQUEST_METHOD::POST
+--
+  [4;35;1mUser Load (0.000367)[0m   [0mSELECT * FROM users WHERE (users."login" = 'quentin') LIMIT 1[0m
+  [4;36;1mUser Update (0.000347)[0m   [0;1mUPDATE users SET "created_at" = '2008-06-18 15:38:51', "email" = 'quentin@example.com', "remember_token" = 'f8ff60ec082e55cf38e4c301e6a74390fd308baf', "login" = 'quentin', "remember_token_expires_at" = '2008-07-07 06:38:51', "crypted_password" = '00742970dc9e6319f8019fd54864d3ea740f04b1', "updated_at" = '2008-06-23 15:38:51', "salt" = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd' WHERE "id" = 1[0m
+Cookie set: auth_token=f8ff60ec082e55cf38e4c301e6a74390fd308baf; path=/; expires=Mon, 07 Jul 2008 06:38:51 GMT
+Redirected to http://test.host/session
+Completed in 0.00249 (401 reqs/sec) | DB: 0.00071 (28%) | 302 Found [http://test.host/session?login=quentin&password=test&remember_me=1]
+  [4;35;1mUser Load (0.000327)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) [0m
+
+
+Processing SessionsController#destroy (for 0.0.0.0 at 2008-06-23 15:38:51) [GET]
+  Session ID: 
+  Parameters: {"action"=>"destroy", "controller"=>"sessions"}
+--
+REMOTE_ADDR::0.0.0.0
+REQUEST_URI::/session
+SERVER_PORT::80
+REQUEST_METHOD::GET
+--
+  [4;36;1mUser Load (0.000278)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) LIMIT 1[0m
+  [4;35;1mUser Update (0.000317)[0m   [0mUPDATE users SET "created_at" = '2008-06-18 15:38:51', "email" = 'quentin@example.com', "remember_token" = NULL, "login" = 'quentin', "remember_token_expires_at" = NULL, "crypted_password" = '00742970dc9e6319f8019fd54864d3ea740f04b1', "updated_at" = '2008-06-23 15:38:51', "salt" = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd' WHERE "id" = 1[0m
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+Redirected to http://test.host/
+Completed in 0.00204 (491 reqs/sec) | DB: 0.00092 (45%) | 302 Found [http://test.host/session]
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2008-06-23 15:38:51) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"sessions", "login"=>"quentin", "password"=>"bad password"}
+--
+REMOTE_ADDR::0.0.0.0
+REQUEST_URI::/session?login=quentin&password=bad+password
+SERVER_PORT::80
+REQUEST_METHOD::POST
+--
+  [4;36;1mUser Load (0.000344)[0m   [0;1mSELECT * FROM users WHERE (users."login" = 'quentin') LIMIT 1[0m
+Rendering template within layouts/default
+Rendering sessions/new
+Completed in 0.00135 (740 reqs/sec) | Rendering: 0.00027 (19%) | DB: 0.00034 (25%) | 200 OK [http://test.host/session?login=quentin&password=bad+password]
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2008-06-23 15:38:51) [POST]
+  Session ID: 
+  Parameters: {"action"=>"create", "controller"=>"sessions", "login"=>"quentin", "password"=>"test"}
+--
+REMOTE_ADDR::0.0.0.0
+REQUEST_URI::/session?login=quentin&password=test
+SERVER_PORT::80
+REQUEST_METHOD::POST
+--
+  [4;35;1mUser Load (0.000350)[0m   [0mSELECT * FROM users WHERE (users."login" = 'quentin') LIMIT 1[0m
+Redirected to http://test.host/session
+Completed in 0.00156 (640 reqs/sec) | DB: 0.00035 (22%) | 302 Found [http://test.host/session?login=quentin&password=test]
+Rendering servers/xrds.xml.erb
+  [4;36;1mUser Load (0.000352)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) [0m
+Rendering users/xrds.xml.erb
+  [4;35;1mUser Load (0.000377)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) [0m
+Rendering users/xrds.xml.erb
+  [4;36;1mSQL (0.000197)[0m   [0;1mSELECT count(*) AS count_all FROM users [0m
+  [4;35;1mUser Load (0.000157)[0m   [0mSELECT * FROM users WHERE (LOWER(users.login) = 'quire') LIMIT 1[0m
+  [4;36;1mUser Load (0.000128)[0m   [0;1mSELECT * FROM users WHERE (LOWER(users.email) = 'quire@example.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.000383)[0m   [0mINSERT INTO users ("salt", "updated_at", "crypted_password", "remember_token_expires_at", "remember_token", "login", "created_at", "email") VALUES('cae04324aebf555cdeb6bdbbe835a28019f75888', '2008-06-23 15:38:51', '3fbf41b873e31ca7c8ff898eb0fbcf4f97c07e13', NULL, NULL, 'quire', '2008-06-23 15:38:51', 'quire@example.com')[0m
+  [4;36;1mSQL (0.000134)[0m   [0;1mSELECT count(*) AS count_all FROM users [0m
+  [4;35;1mUser Load (0.000324)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) [0m
+  [4;36;1mUser Update (0.000364)[0m   [0;1mUPDATE users SET "created_at" = '2008-06-18 15:38:51', "email" = 'quentin@example.com', "remember_token" = 'f8ff60ec082e55cf38e4c301e6a74390fd308baf', "login" = 'quentin', "remember_token_expires_at" = '2008-07-07 06:38:51', "crypted_password" = '00742970dc9e6319f8019fd54864d3ea740f04b1', "updated_at" = '2008-06-23 15:38:51', "salt" = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd' WHERE "id" = 1[0m
+  [4;35;1mUser Load (0.000336)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) [0m
+  [4;36;1mUser Update (0.000322)[0m   [0;1mUPDATE users SET "created_at" = '2008-06-18 15:38:51', "email" = 'quentin@example.com', "remember_token" = '0f8aa3fc43131cc665705bf9ce7b7bfd258d7f61', "login" = 'quentin', "remember_token_expires_at" = '2008-06-30 06:38:51', "crypted_password" = '00742970dc9e6319f8019fd54864d3ea740f04b1', "updated_at" = '2008-06-23 15:38:51', "salt" = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd' WHERE "id" = 1[0m
+  [4;35;1mUser Load (0.000363)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) [0m
+  [4;36;1mUser Update (0.000321)[0m   [0;1mUPDATE users SET "created_at" = '2008-06-18 15:38:51', "email" = 'quentin@example.com', "remember_token" = '0f8aa3fc43131cc665705bf9ce7b7bfd258d7f61', "login" = 'quentin', "remember_token_expires_at" = '2008-06-30 06:38:51', "crypted_password" = '00742970dc9e6319f8019fd54864d3ea740f04b1', "updated_at" = '2008-06-23 15:38:51', "salt" = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd' WHERE "id" = 1[0m
+  [4;35;1mUser Load (0.000541)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) [0m
+  [4;36;1mUser Update (0.000323)[0m   [0;1mUPDATE users SET "created_at" = '2008-06-18 15:38:51', "email" = 'quentin@example.com', "remember_token" = 'f8ff60ec082e55cf38e4c301e6a74390fd308baf', "login" = 'quentin', "remember_token_expires_at" = '2008-07-07 06:38:51', "crypted_password" = '00742970dc9e6319f8019fd54864d3ea740f04b1', "updated_at" = '2008-06-23 15:38:51', "salt" = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd' WHERE "id" = 1[0m
+  [4;35;1mUser Update (0.000105)[0m   [0mUPDATE users SET "created_at" = '2008-06-18 15:38:51', "email" = 'quentin@example.com', "remember_token" = NULL, "login" = 'quentin', "remember_token_expires_at" = NULL, "crypted_password" = '00742970dc9e6319f8019fd54864d3ea740f04b1', "updated_at" = '2008-06-23 15:38:51', "salt" = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd' WHERE "id" = 1[0m
+  [4;36;1mUser Load (0.000319)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) [0m
+  [4;35;1mUser Update (0.000318)[0m   [0mUPDATE users SET "created_at" = '2008-06-18 15:38:51', "email" = 'quentin@example.com', "remember_token" = 'f8ff60ec082e55cf38e4c301e6a74390fd308baf', "login" = 'quentin', "remember_token_expires_at" = '2008-07-07 06:38:51', "crypted_password" = '00742970dc9e6319f8019fd54864d3ea740f04b1', "updated_at" = '2008-06-23 15:38:51', "salt" = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd' WHERE "id" = 1[0m
+  [4;36;1mUser Load (0.000350)[0m   [0;1mSELECT * FROM users WHERE (users."login" = 'quentin') LIMIT 1[0m
+  [4;35;1mUser Load (0.000263)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) [0m
+  [4;36;1mUser Load (0.000297)[0m   [0;1mSELECT * FROM users WHERE (users."id" = 1) [0m
+  [4;35;1mUser Load (0.000147)[0m   [0mSELECT * FROM users WHERE (LOWER(users.login) = 'quentin2' AND users.id <> 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.000228)[0m   [0;1mSELECT * FROM users WHERE (LOWER(users.email) = 'quentin@example.com' AND users.id <> 1) LIMIT 1[0m
+  [4;35;1mUser Update (0.000335)[0m   [0mUPDATE users SET "created_at" = '2008-06-18 15:38:51', "email" = 'quentin@example.com', "remember_token" = NULL, "login" = 'quentin2', "remember_token_expires_at" = NULL, "crypted_password" = '00742970dc9e6319f8019fd54864d3ea740f04b1', "updated_at" = '2008-06-23 15:38:51', "salt" = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd' WHERE "id" = 1[0m
+  [4;36;1mUser Load (0.000283)[0m   [0;1mSELECT * FROM users WHERE (users."login" = 'quentin2') LIMIT 1[0m
+  [4;35;1mUser Load (0.000312)[0m   [0mSELECT * FROM users WHERE (users."id" = 1) [0m
+  [4;36;1mUser Load (0.000152)[0m   [0;1mSELECT * FROM users WHERE (LOWER(users.login) = 'quentin' AND users.id <> 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.000139)[0m   [0mSELECT * FROM users WHERE (LOWER(users.email) = 'quentin@example.com' AND users.id <> 1) LIMIT 1[0m
+  [4;36;1mUser Update (0.000272)[0m   [0;1mUPDATE users SET "created_at" = '2008-06-18 15:38:51', "email" = 'quentin@example.com', "remember_token" = NULL, "login" = 'quentin', "remember_token_expires_at" = NULL, "crypted_password" = '4b6dd603c64f03bc2f676658e287094878df9603', "updated_at" = '2008-06-23 15:38:51', "salt" = '7e3041ebc2fc05a40c60028e2c4901a81035d3cd' WHERE "id" = 1[0m
+  [4;35;1mUser Load (0.000327)[0m   [0mSELECT * FROM users WHERE (users."login" = 'quentin') LIMIT 1[0m
+  [4;36;1mSQL (0.000198)[0m   [0;1mSELECT count(*) AS count_all FROM users [0m
+  [4;35;1mUser Load (0.000148)[0m   [0mSELECT * FROM users WHERE (LOWER(users.login) = 'quire') LIMIT 1[0m
+  [4;36;1mUser Load (0.000120)[0m   [0;1mSELECT * FROM users WHERE (users.email IS NULL) LIMIT 1[0m
+  [4;35;1mSQL (0.000145)[0m   [0mSELECT count(*) AS count_all FROM users [0m
+  [4;36;1mSQL (0.000163)[0m   [0;1mSELECT count(*) AS count_all FROM users [0m
+  [4;35;1mUser Load (0.000158)[0m   [0mSELECT * FROM users WHERE (LOWER(users.login) = 'quire') LIMIT 1[0m
+  [4;36;1mUser Load (0.000128)[0m   [0;1mSELECT * FROM users WHERE (LOWER(users.email) = 'quire@example.com') LIMIT 1[0m
+  [4;35;1mSQL (0.000124)[0m   [0mSELECT count(*) AS count_all FROM users [0m
+  [4;36;1mSQL (0.000165)[0m   [0;1mSELECT count(*) AS count_all FROM users [0m
+  [4;35;1mUser Load (0.000157)[0m   [0mSELECT * FROM users WHERE (LOWER(users.login) = 'quire') LIMIT 1[0m
+  [4;36;1mUser Load (0.000220)[0m   [0;1mSELECT * FROM users WHERE (LOWER(users.email) = 'quire@example.com') LIMIT 1[0m
+  [4;35;1mSQL (0.000153)[0m   [0mSELECT count(*) AS count_all FROM users [0m
+  [4;36;1mSQL (0.000207)[0m   [0;1mSELECT count(*) AS count_all FROM users [0m
+  [4;35;1mUser Load (0.000135)[0m   [0mSELECT * FROM users WHERE (users.login IS NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000127)[0m   [0;1mSELECT * FROM users WHERE (LOWER(users.email) = 'quire@example.com') LIMIT 1[0m
+  [4;35;1mSQL (0.000130)[0m   [0mSELECT count(*) AS count_all FROM users [0m

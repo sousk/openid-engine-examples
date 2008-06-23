@@ -9164,3 +9164,328 @@ RuntimeError (authorized):
     ./script/server:3
 
 Rendering /Users/sou_sk/work/ws/trunk/source/openid2/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+  [4;36;1mSQL (0.000436)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;35;1mSQL (0.000229)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000171)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000207)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000168)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000191)[0m   [0mSELECT * FROM schema_info[0m
+  [4;36;1mSQL (0.000355)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000060)[0m   [0mPRAGMA index_list(accounts)[0m
+  [4;36;1mSQL (0.000061)[0m   [0;1mPRAGMA index_list(openid_associations)[0m
+  [4;35;1mSQL (0.000059)[0m   [0mPRAGMA index_list(openid_nonces)[0m
+  [4;36;1mSQL (0.000062)[0m   [0;1mPRAGMA index_list(users)[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2008-06-23 15:39:33) [GET]
+  Session ID: c78c80a2bf0c33c92f5d7d3cdfdccd64
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/default
+Rendering sessions/new
+Completed in 0.00724 (138 reqs/sec) | Rendering: 0.00492 (67%) | DB: 0.00000 (0%) | 200 OK [http://localhost/session/new]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2008-06-23 15:39:39) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMzI4YmQ3M2U2MWNjOTQ4MjIyOTU3ZTU3Y2QzNDdm%0AN2EiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--acd7e28a3fb559711c1e3c63922e2d92b7a28853
+  Parameters: {"commit"=>"Sign in", "authenticity_token"=>"4be0f327e8ccabaf9b22dec59b3b8173dfe4d740", "action"=>"create", "controller"=>"sessions", "openid_identifier"=>"localhost:3000/server"}
+  [4;36;1mOpenidAssociation Load (0.000389)[0m   [0;1mSELECT * FROM openid_associations WHERE (openid_associations."op_endpoint" = 'http://localhost:3000/server') AND (expiration > '2008-06-23 06:39:39') LIMIT 1[0m
+Redirected to http://localhost:3000/server?openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.mode=checkid_setup&openid.assoc_handle=%7BHMAC-SHA256%7D%7B48339560%7D%7B2%2BByUg%3D%3D%7D&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.return_to=http%3A%2F%2Flocalhost%3A8080%2Fsession&openid.realm=http%3A%2F%2Flocalhost%3A8080%2Fsession
+Completed in 0.21793 (4 reqs/sec) | DB: 0.00039 (0%) | 302 Found [http://localhost/session]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2008-06-23 15:39:42) [POST]
+  Session ID: BAh7CDoMY3NyZl9pZCIlMzI4YmQ3M2U2MWNjOTQ4MjIyOTU3ZTU3Y2QzNDdm%0AN2E6HGxhc3RfcmVxdWVzdGVkX2VuZHBvaW50IiFodHRwOi8vbG9jYWxob3N0%0AOjMwMDAvc2VydmVyIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFz%0AaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--21f40c05882f426f8ffa7763f46e8b3b38d83449
+  Parameters: {"commit"=>"Sign in", "authenticity_token"=>"4be0f327e8ccabaf9b22dec59b3b8173dfe4d740", "action"=>"create", "controller"=>"sessions", "openid_identifier"=>"localhost:3000/server"}
+  [4;35;1mOpenidAssociation Load (0.000343)[0m   [0mSELECT * FROM openid_associations WHERE (openid_associations."op_endpoint" = 'http://localhost:3000/server') AND (expiration > '2008-06-23 06:39:42') LIMIT 1[0m
+Redirected to http://localhost:3000/server?openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.mode=checkid_setup&openid.assoc_handle=%7BHMAC-SHA256%7D%7B48339560%7D%7B2%2BByUg%3D%3D%7D&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.return_to=http%3A%2F%2Flocalhost%3A8080%2Fsession&openid.realm=http%3A%2F%2Flocalhost%3A8080%2Fsession
+Completed in 0.13543 (7 reqs/sec) | DB: 0.00034 (0%) | 302 Found [http://localhost/session]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2008-06-23 15:39:44) [POST]
+  Session ID: BAh7CDoMY3NyZl9pZCIlMzI4YmQ3M2U2MWNjOTQ4MjIyOTU3ZTU3Y2QzNDdm%0AN2E6HGxhc3RfcmVxdWVzdGVkX2VuZHBvaW50IiFodHRwOi8vbG9jYWxob3N0%0AOjMwMDAvc2VydmVyIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFz%0AaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--21f40c05882f426f8ffa7763f46e8b3b38d83449
+  Parameters: {"commit"=>"Sign in", "authenticity_token"=>"4be0f327e8ccabaf9b22dec59b3b8173dfe4d740", "action"=>"create", "controller"=>"sessions", "openid_identifier"=>"localhost:3000/server"}
+  [4;36;1mOpenidAssociation Load (0.000578)[0m   [0;1mSELECT * FROM openid_associations WHERE (openid_associations."op_endpoint" = 'http://localhost:3000/server') AND (expiration > '2008-06-23 06:39:44') LIMIT 1[0m
+Redirected to http://localhost:3000/server?openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.mode=checkid_setup&openid.assoc_handle=%7BHMAC-SHA256%7D%7B48339560%7D%7B2%2BByUg%3D%3D%7D&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.return_to=http%3A%2F%2Flocalhost%3A8080%2Fsession&openid.realm=http%3A%2F%2Flocalhost%3A8080%2Fsession
+Completed in 0.07919 (12 reqs/sec) | DB: 0.00058 (0%) | 302 Found [http://localhost/session]
+  [4;36;1mSQL (0.000526)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: no such table: accounts: DROP TABLE accounts[0m
+  [4;36;1mSQL (0.001990)[0m   [0;1mCREATE TABLE accounts ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: no such table: openid_associations: DROP TABLE openid_associations[0m
+  [4;36;1mSQL (0.001529)[0m   [0;1mCREATE TABLE openid_associations ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "op_endpoint" varchar(255) DEFAULT NULL, "handle" varchar(255) NOT NULL, "encryption_type" varchar(255) NOT NULL, "secret" blob NOT NULL, "expiration" datetime NOT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: no such table: openid_nonces: DROP TABLE openid_nonces[0m
+  [4;36;1mSQL (0.009153)[0m   [0;1mCREATE TABLE openid_nonces ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "op_endpoint" varchar(255) DEFAULT NULL, "nonce" varchar(255) DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: no such table: users: DROP TABLE users[0m
+  [4;36;1mSQL (0.001631)[0m   [0;1mCREATE TABLE users ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255) DEFAULT NULL, "email" varchar(255) DEFAULT NULL, "crypted_password" varchar(40) DEFAULT NULL, "salt" varchar(40) DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL, "remember_token" varchar(255) DEFAULT NULL, "remember_token_expires_at" datetime DEFAULT NULL) [0m
+  [4;35;1mSQL (0.004779)[0m   [0mCREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.001574)[0m   [0;1mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;35;1mSQL (0.005624)[0m   [0mUPDATE schema_info SET version = 4[0m
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2008-06-23 15:47:14) [POST]
+  Session ID: BAh7CDoMY3NyZl9pZCIlMzI4YmQ3M2U2MWNjOTQ4MjIyOTU3ZTU3Y2QzNDdm%0AN2E6HGxhc3RfcmVxdWVzdGVkX2VuZHBvaW50IiFodHRwOi8vbG9jYWxob3N0%0AOjMwMDAvc2VydmVyIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFz%0AaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--21f40c05882f426f8ffa7763f46e8b3b38d83449
+  Parameters: {"commit"=>"Sign in", "authenticity_token"=>"4be0f327e8ccabaf9b22dec59b3b8173dfe4d740", "action"=>"create", "controller"=>"sessions", "openid_identifier"=>"localhost:3000/server"}
+  [4;36;1mOpenidAssociation Load (0.000197)[0m   [0;1mSELECT * FROM openid_associations WHERE (openid_associations."op_endpoint" = 'http://localhost:3000/server') AND (expiration > '2008-06-23 06:47:14') LIMIT 1[0m
+  [4;35;1mOpenidAssociation Create (0.000514)[0m   [0mINSERT INTO openid_associations ("handle", "op_endpoint", "updated_at", "encryption_type", "expiration", "secret", "created_at") VALUES('{HMAC-SHA256}{485f46f2}{GviD4A==}', 'http://localhost:3000/server', '2008-06-23 15:47:15', 'HMAC-SHA256', '2008-06-23 06:47:18', 'g©ÿþÝÄž©`µW•B¨I«¶Òb3²7F¦~*', '2008-06-23 15:47:15')[0m
+Redirected to http://localhost:3000/server?openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.mode=checkid_setup&openid.assoc_handle=%7BHMAC-SHA256%7D%7B485f46f2%7D%7BGviD4A%3D%3D%7D&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.return_to=http%3A%2F%2Flocalhost%3A8080%2Fsession&openid.realm=http%3A%2F%2Flocalhost%3A8080%2Fsession
+Completed in 0.43413 (2 reqs/sec) | DB: 0.00071 (0%) | 302 Found [http://localhost/session]
+
+
+Processing SessionsController#show (for 127.0.0.1 at 2008-06-23 15:47:15) [GET]
+  Session ID: BAh7CDoMY3NyZl9pZCIlMzI4YmQ3M2U2MWNjOTQ4MjIyOTU3ZTU3Y2QzNDdm%0AN2E6HGxhc3RfcmVxdWVzdGVkX2VuZHBvaW50IiFodHRwOi8vbG9jYWxob3N0%0AOjMwMDAvc2VydmVyIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFz%0AaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--21f40c05882f426f8ffa7763f46e8b3b38d83449
+  Parameters: {"openid.sig"=>"XwsrXMtGqospBy4B9CBriE2UijEEgn7po7SLCQ8d fc=", "openid.mode"=>"id_res", "openid.return_to"=>"http://localhost:8080/session", "openid.claimed_id"=>"http://localhost:3000/users/1", "openid.op_endpoint"=>"http://localhost:3000/server", "openid.ns"=>"http://specs.openid.net/auth/2.0", "openid.response_nonce"=>"2jFZeg2008-06-23T06:47:15Z", "action"=>"show", "controller"=>"sessions", "openid.identity"=>"1", "openid.assoc_handle"=>"{HMAC-SHA256}{485f46f2}{GviD4A==}", "openid.signed"=>"op_endpoint,return_to,response_nonce,assoc_handle,claimed_id,identity"}
+
+
+OpenURI::HTTPError (404 Not Found):
+    /opt/local/lib/ruby/gems/1.8/gems/rest-open-uri-1.0.0/lib/rest-open-uri.rb:320:in `open_http'
+    /opt/local/lib/ruby/gems/1.8/gems/rest-open-uri-1.0.0/lib/rest-open-uri.rb:659:in `buffer_open'
+    /opt/local/lib/ruby/gems/1.8/gems/rest-open-uri-1.0.0/lib/rest-open-uri.rb:194:in `open_loop'
+    /opt/local/lib/ruby/gems/1.8/gems/rest-open-uri-1.0.0/lib/rest-open-uri.rb:192:in `catch'
+    /opt/local/lib/ruby/gems/1.8/gems/rest-open-uri-1.0.0/lib/rest-open-uri.rb:192:in `open_loop'
+    /opt/local/lib/ruby/gems/1.8/gems/rest-open-uri-1.0.0/lib/rest-open-uri.rb:162:in `open_uri'
+    /opt/local/lib/ruby/gems/1.8/gems/rest-open-uri-1.0.0/lib/rest-open-uri.rb:561:in `open'
+    /opt/local/lib/ruby/gems/1.8/gems/rest-open-uri-1.0.0/lib/rest-open-uri.rb:35:in `open'
+    /vendor/plugins/openid_engine/lib/openid_engine/agent.rb:59:in `request'
+    /vendor/plugins/openid_engine/lib/openid_engine/agent.rb:39:in `get'
+    /vendor/plugins/openid_engine/lib/openid_engine/yadis.rb:60:in `id2rd'
+    /vendor/plugins/openid_engine/lib/openid_engine/yadis.rb:47:in `initiate'
+    /vendor/plugins/openid_engine/lib/openid_engine/rp.rb:55:in `discover_by_yadis'
+    /vendor/plugins/openid_engine/lib/openid_engine/acts_as_rp.rb:74:in `verify_discovered_information'
+    /vendor/plugins/openid_engine/lib/openid_engine/acts_as_rp.rb:66:in `verify_openid_response'
+    /vendor/plugins/openid_engine/lib/openid_engine/acts_as_rp.rb:60:in `complete_openid_authentication'
+    /vendor/plugins/openid_engine/lib/openid_engine/acts_as_rp.rb:15:in `process_openid_request'
+    /app/controllers/sessions_controller.rb:36:in `openid_authentication'
+    /app/controllers/sessions_controller.rb:13:in `show'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1158:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1158:in `perform_action_without_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:76:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/servers/mongrel.rb:64
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/server.rb:39
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    ./script/server:3
+
+Rendering /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2008-06-23 17:00:49) [GET]
+  Session ID: BAh7CDoMY3NyZl9pZCIlMzI4YmQ3M2U2MWNjOTQ4MjIyOTU3ZTU3Y2QzNDdm%0AN2E6HGxhc3RfcmVxdWVzdGVkX2VuZHBvaW50IiFodHRwOi8vbG9jYWxob3N0%0AOjMwMDAvc2VydmVyIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFz%0AaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--21f40c05882f426f8ffa7763f46e8b3b38d83449
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/default
+Rendering sessions/new
+Completed in 0.01002 (99 reqs/sec) | Rendering: 0.00523 (52%) | DB: 0.00000 (0%) | 200 OK [http://localhost/session/new]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2008-06-23 17:00:52) [POST]
+  Session ID: BAh7CDoMY3NyZl9pZCIlMzI4YmQ3M2U2MWNjOTQ4MjIyOTU3ZTU3Y2QzNDdm%0AN2E6HGxhc3RfcmVxdWVzdGVkX2VuZHBvaW50IiFodHRwOi8vbG9jYWxob3N0%0AOjMwMDAvc2VydmVyIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFz%0AaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--21f40c05882f426f8ffa7763f46e8b3b38d83449
+  Parameters: {"commit"=>"Sign in", "authenticity_token"=>"4be0f327e8ccabaf9b22dec59b3b8173dfe4d740", "action"=>"create", "controller"=>"sessions", "openid_identifier"=>"localhost:3000/server"}
+  [4;36;1mOpenidAssociation Load (0.000256)[0m   [0;1mSELECT * FROM openid_associations WHERE (openid_associations."op_endpoint" = 'http://localhost:3000/server') AND (expiration > '2008-06-23 08:00:52') LIMIT 1[0m
+  [4;35;1mOpenidAssociation Create (0.000541)[0m   [0mINSERT INTO openid_associations ("handle", "op_endpoint", "updated_at", "encryption_type", "expiration", "secret", "created_at") VALUES('{HMAC-SHA256}{485f5834}{VlmSiA==}', 'http://localhost:3000/server', '2008-06-23 17:00:53', 'HMAC-SHA256', '2008-06-23 08:00:56', '¥Ç»»kÄ\3ˆIèÏù¢ûç†“òv`+½‰qÑö(æ', '2008-06-23 17:00:53')[0m
+Redirected to http://localhost:3000/server?openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.mode=checkid_setup&openid.assoc_handle=%7BHMAC-SHA256%7D%7B485f5834%7D%7BVlmSiA%3D%3D%7D&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.return_to=http%3A%2F%2Flocalhost%3A8080%2Fsession&openid.realm=http%3A%2F%2Flocalhost%3A8080%2Fsession
+Completed in 1.53705 (0 reqs/sec) | DB: 0.00080 (0%) | 302 Found [http://localhost/session]
+
+
+Processing SessionsController#show (for 127.0.0.1 at 2008-06-23 17:00:54) [GET]
+  Session ID: BAh7CDoMY3NyZl9pZCIlMzI4YmQ3M2U2MWNjOTQ4MjIyOTU3ZTU3Y2QzNDdm%0AN2E6HGxhc3RfcmVxdWVzdGVkX2VuZHBvaW50IiFodHRwOi8vbG9jYWxob3N0%0AOjMwMDAvc2VydmVyIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFz%0AaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--21f40c05882f426f8ffa7763f46e8b3b38d83449
+  Parameters: {"openid.sig"=>"wKVyDyHCgI1PNFQIOP3O6/XuHJ4ZgjJ46SoJJkkHVt4=", "openid.mode"=>"id_res", "openid.return_to"=>"http://localhost:8080/session", "openid.claimed_id"=>"http://localhost:3000/users/1", "openid.op_endpoint"=>"http://localhost:3000/server", "openid.ns"=>"http://specs.openid.net/auth/2.0", "openid.response_nonce"=>"oJQvkX2008-06-23T08:00:54Z", "action"=>"show", "controller"=>"sessions", "openid.identity"=>"1", "openid.assoc_handle"=>"{HMAC-SHA256}{485f5834}{VlmSiA==}", "openid.signed"=>"op_endpoint,return_to,response_nonce,assoc_handle,claimed_id,identity"}
+::::::::::::::::::::http://localhost:3000/users/1
+
+
+OpenURI::HTTPError (404 Not Found):
+    /opt/local/lib/ruby/gems/1.8/gems/rest-open-uri-1.0.0/lib/rest-open-uri.rb:320:in `open_http'
+    /opt/local/lib/ruby/gems/1.8/gems/rest-open-uri-1.0.0/lib/rest-open-uri.rb:659:in `buffer_open'
+    /opt/local/lib/ruby/gems/1.8/gems/rest-open-uri-1.0.0/lib/rest-open-uri.rb:194:in `open_loop'
+    /opt/local/lib/ruby/gems/1.8/gems/rest-open-uri-1.0.0/lib/rest-open-uri.rb:192:in `catch'
+    /opt/local/lib/ruby/gems/1.8/gems/rest-open-uri-1.0.0/lib/rest-open-uri.rb:192:in `open_loop'
+    /opt/local/lib/ruby/gems/1.8/gems/rest-open-uri-1.0.0/lib/rest-open-uri.rb:162:in `open_uri'
+    /opt/local/lib/ruby/gems/1.8/gems/rest-open-uri-1.0.0/lib/rest-open-uri.rb:561:in `open'
+    /opt/local/lib/ruby/gems/1.8/gems/rest-open-uri-1.0.0/lib/rest-open-uri.rb:35:in `open'
+    /vendor/plugins/openid_engine/lib/openid_engine/agent.rb:59:in `request'
+    /vendor/plugins/openid_engine/lib/openid_engine/agent.rb:39:in `get'
+    /vendor/plugins/openid_engine/lib/openid_engine/yadis.rb:60:in `id2rd'
+    /vendor/plugins/openid_engine/lib/openid_engine/yadis.rb:47:in `initiate'
+    /vendor/plugins/openid_engine/lib/openid_engine/rp.rb:55:in `discover_by_yadis'
+    /vendor/plugins/openid_engine/lib/openid_engine/acts_as_rp.rb:75:in `verify_discovered_information'
+    /vendor/plugins/openid_engine/lib/openid_engine/acts_as_rp.rb:66:in `verify_openid_response'
+    /vendor/plugins/openid_engine/lib/openid_engine/acts_as_rp.rb:60:in `complete_openid_authentication'
+    /vendor/plugins/openid_engine/lib/openid_engine/acts_as_rp.rb:15:in `process_openid_request'
+    /app/controllers/sessions_controller.rb:36:in `openid_authentication'
+    /app/controllers/sessions_controller.rb:13:in `show'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1158:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1158:in `perform_action_without_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:76:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/servers/mongrel.rb:64
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/server.rb:39
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    ./script/server:3
+
+Rendering /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing SessionsController#show (for 127.0.0.1 at 2008-06-23 17:10:11) [GET]
+  Session ID: BAh7CDoMY3NyZl9pZCIlMzI4YmQ3M2U2MWNjOTQ4MjIyOTU3ZTU3Y2QzNDdm%0AN2E6HGxhc3RfcmVxdWVzdGVkX2VuZHBvaW50IiFodHRwOi8vbG9jYWxob3N0%0AOjMwMDAvc2VydmVyIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFz%0AaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--21f40c05882f426f8ffa7763f46e8b3b38d83449
+  Parameters: {"openid.sig"=>"wKVyDyHCgI1PNFQIOP3O6/XuHJ4ZgjJ46SoJJkkHVt4=", "openid.mode"=>"id_res", "openid.return_to"=>"http://localhost:8080/session", "openid.claimed_id"=>"http://localhost:3000/users/1", "openid.op_endpoint"=>"http://localhost:3000/server", "openid.ns"=>"http://specs.openid.net/auth/2.0", "openid.response_nonce"=>"oJQvkX2008-06-23T08:00:54Z", "action"=>"show", "controller"=>"sessions", "openid.identity"=>"1", "openid.assoc_handle"=>"{HMAC-SHA256}{485f5834}{VlmSiA==}", "openid.signed"=>"op_endpoint,return_to,response_nonce,assoc_handle,claimed_id,identity"}
+::::::::::::::::::::http://localhost:3000/users/1
+  [4;36;1mOpenidNonce Load (0.000205)[0m   [0;1mSELECT * FROM openid_nonces WHERE (openid_nonces."op_endpoint" = 'http://localhost:3000/server' AND openid_nonces."nonce" = 'oJQvkX2008-06-23T08:00:54Z') LIMIT 1[0m
+  [4;35;1mOpenidNonce Create (0.000387)[0m   [0mINSERT INTO openid_nonces ("op_endpoint", "updated_at", "nonce", "created_at") VALUES('http://localhost:3000/server', '2008-06-23 17:10:11', 'oJQvkX2008-06-23T08:00:54Z', '2008-06-23 17:10:11')[0m
+  [4;36;1mOpenidAssociation Load (0.000342)[0m   [0;1mSELECT * FROM openid_associations WHERE (openid_associations."handle" = '{HMAC-SHA256}{485f5834}{VlmSiA==}') LIMIT 1[0m
+
+
+RuntimeError (authorized):
+    /vendor/plugins/openid_engine/lib/openid_engine/acts_as_rp.rb:60:in `complete_openid_authentication'
+    /vendor/plugins/openid_engine/lib/openid_engine/acts_as_rp.rb:15:in `process_openid_request'
+    /app/controllers/sessions_controller.rb:36:in `openid_authentication'
+    /app/controllers/sessions_controller.rb:13:in `show'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1158:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1158:in `perform_action_without_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:76:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:489:in `load'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/servers/mongrel.rb:64
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/server.rb:39
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /opt/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    ./script/server:3
+
+Rendering /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
