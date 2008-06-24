@@ -7,8 +7,16 @@
 #   column: value
 sha256:
   id: 1
-  handle: <%= 'openid-assoc-handle' %>
+  handle: <%= 'sha256' %>
   encryption_type: HMAC-SHA256
   lifetime: <%= 60 * 60 * 24 %>
   secret: <%= Base64.decode64("FOwbMI7CxUqcNmW6LUB93MuTQeS8sfTi40eoSl8BUYQ=") %>
   created_at: <%= 2.hours.ago.to_s :db %>
+
+sha256-expired:
+  id: 2
+  handle: <%= 'sha256-expired' %>
+  encryption_type: HMAC-SHA256
+  lifetime: <%= 60 * 60 * 24 %>
+  secret: <%= Base64.decode64("FOwbMI7CxUqcNmW6LUB93MuTQeS8sfTi40eoSl8BUYQ=") %>
+  created_at: <%= 25.hours.ago.to_s :db %>

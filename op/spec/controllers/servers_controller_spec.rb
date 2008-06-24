@@ -1,36 +1,52 @@
 require File.dirname(__FILE__) + '/../openid_helper'
 
-require 'openid_engine/rp'
-
-module OpenidHelper
-  include OpenidEngine
-    
-  def do_assoc_request(path)
-    post path
-  end
-  
-  private
-  def policy
-    {
-      :ns =>'http://specs.openid.net/auth/2.0',
-      :assoc_type => 'HMAC-SHA256',
-      :session_type => 'DH-SHA256'
-    }
-  end
-  
-  def agent
-    @agent ||= Agent.new
-  end
-  
-  def associator
-    @associator ||= Associator.factory(policy, agent, [Rp.const_get(:DEFAULT_DH_MODULUS), Rp.const_get(:DEFAULT_DH_GEN)])
-  end
-end
+# module OpenidHelper
+#   include OpenidEngine
+#     
+#   def do_assoc_request(path)
+#     post path
+#   end
+#   
+#   private
+#   def policy
+#     {
+#       :ns =>'http://specs.openid.net/auth/2.0',
+#       :assoc_type => 'HMAC-SHA256',
+#       :session_type => 'DH-SHA256'
+#     }
+#   end
+#   
+#   def agent
+#     @agent ||= Agent.new
+#   end
+#   
+#   def associator
+#     @associator ||= Associator.factory(policy, agent, [Rp.const_get(:DEFAULT_DH_MODULUS), Rp.const_get(:DEFAULT_DH_GEN)])
+#   end
+# end
 
 
 describe ServersController do
   include OpenidHelper
   fixtures :openid_associations
+
+  it {
+    controller.should be_kind_of(ServersController)
+    controller.class.should be_include(OpenidEngine::ActsAsOp)
+    
+    controller.should respond_to(:op)
+    controller.op.should be_kind_of(OpenidEngine::Op)
+    
+    controller.should respond_to(:process_checkid_request)
+  }
+  
+  describe "ActsAsOp" do
+    describe "#process_checkid_request" do
+      it "should retrieve stored association by handle" do
+
+      end
+    end
+  end
   
   # describe "POST /server" do
   #   it "should accept OpenID Association Request" do
@@ -64,27 +80,27 @@ describe ServersController do
     controller.stub!(:gen_private_key).and_return(@server_private)
   end
   
-  describe "GET /server" do
-    
-    it "should accept OpenID Authentication Request" do
-      
-      mock_server_association
-      param = {
-        'openid.ns' => 'http://specs.openid.net/auth/2.0',
-        'openid.mode' => 'checkid_setup',
-        'openid.identity' => 'http://specs.openid.net/auth/2.0/identifier_select',
-        'openid.claimed_id' => 'http://specs.openid.net/auth/2.0/identifier_select',
-        'openid.return_to' => 'http://localhost:8080/session/',
-        'openid.realm' => 'http://localhost:8080/session/',
-        'openid.assoc_handle' => @assoc[:handle]
-      }
-      
-      get :show, param
-      
-      response.should be_redirect
-      puts response.body
-    end
-  end
+  # describe "GET /server" do
+  #   
+  #   it "should accept OpenID Authentication Request" do
+  #     
+  #     mock_server_association
+  #     param = {
+  #       'openid.ns' => 'http://specs.openid.net/auth/2.0',
+  #       'openid.mode' => 'checkid_setup',
+  #       'openid.identity' => 'http://specs.openid.net/auth/2.0/identifier_select',
+  #       'openid.claimed_id' => 'http://specs.openid.net/auth/2.0/identifier_select',
+  #       'openid.return_to' => 'http://localhost:8080/session/',
+  #       'openid.realm' => 'http://localhost:8080/session/',
+  #       'openid.assoc_handle' => @assoc[:handle]
+  #     }
+  #     
+  #     get :show, param
+  #     
+  #     response.should be_redirect
+  #     puts response.body
+  #   end
+  # end
   
   
   
