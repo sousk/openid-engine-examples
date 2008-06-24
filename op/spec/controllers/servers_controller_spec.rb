@@ -41,10 +41,17 @@ describe ServersController do
   }
   
   describe "ActsAsOp" do
-    describe "#process_checkid_request" do
-      it "should retrieve stored association by handle" do
-
+    describe "Association handling" do
+      it "should retrieve stored association" do
+        controller.send(:stored_association, 'sha256').should == openid_associations(:sha256)
       end
+      
+      it "should get nil if assoc expired" do
+        controller.send(:stored_association, 'sha256-expired').should be_nil
+      end
+    end
+    
+    describe "#process_checkid_request" do
     end
   end
   

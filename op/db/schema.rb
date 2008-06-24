@@ -12,10 +12,10 @@
 ActiveRecord::Schema.define(:version => 2) do
 
   create_table "openid_associations", :force => true do |t|
-    t.string   "handle"
-    t.string   "encryption_type"
-    t.integer  "lifetime"
-    t.binary   "secret"
+    t.string   "handle",          :null => false
+    t.string   "encryption_type", :null => false
+    t.binary   "secret",          :null => false
+    t.datetime "expiration",      :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,10 +1,10 @@
 class CreateOpenidAssociations < ActiveRecord::Migration
   def self.up
     create_table :openid_associations do |t|
-      t.string :handle, :encryption_type
-      t.integer :lifetime
-      t.binary :secret
-
+      t.string :handle, :encryption_type, :null => false
+      t.binary :secret, :null => false
+      t.datetime :expiration, :null => false
+      
       t.timestamps
     end
   end
