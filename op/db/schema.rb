@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(:version => 2) do
     t.string   "handle",          :null => false
     t.string   "encryption_type", :null => false
     t.binary   "secret",          :null => false
-    t.datetime "expiration",      :null => false
+    t.integer  "lifetime",        :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

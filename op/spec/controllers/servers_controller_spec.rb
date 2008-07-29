@@ -27,6 +27,7 @@ require File.dirname(__FILE__) + '/../openid_helper'
 
 
 describe ServersController do
+  include OpenidEngine
   include OpenidHelper
   fixtures :openid_associations
 
@@ -41,17 +42,38 @@ describe ServersController do
   }
   
   describe "ActsAsOp" do
-    describe "Association handling" do
-      it "should retrieve stored association" do
-        controller.send(:stored_association, 'sha256').should == openid_associations(:sha256)
-      end
+    
+    before(:each) do
+      @params = {}
+      controller.stub!(:params).and_return @params
       
-      it "should get nil if assoc expired" do
-        controller.send(:stored_association, 'sha256-expired').should be_nil
-      end
+      @return_to = 'http://foo.example.com/return_to'
+      @realm = 'http://foo.example.com/'
+    end
+    
+    def mock_params(*hash)
+      Array(hash).each { |k,v| @params[k] = v }
+    end
+    
+    def mock_op
+      mock_params 'openid.assoc_handle' => 'sha256'
+      
+      @assocs = Object.new
+      @assocs.stub!(:find_by_handle).and_return openid_associations(:assoc_sha256)
+      @op = OpenidEngine::Op.new :assoc_storage => @assocs
+      
+      controller.stub!(:op).and_return @op
     end
     
     describe "#process_checkid_request" do
+      before(:each) do
+        mock_params 'openid.return_to' => @return_to, 'openid.realm' => @realm
+      end
+      
+      it "should return positive assertion" do
+        mock_op
+        controller.process_checkid_request
+      end
     end
   end
   

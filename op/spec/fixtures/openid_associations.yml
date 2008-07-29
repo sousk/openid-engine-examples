@@ -5,18 +5,18 @@
 #
 # two:
 #   column: value
-sha256:
+assoc_sha256:
   id: 1
   handle: <%= 'sha256' %>
   encryption_type: HMAC-SHA256
   secret: <%= Base64.decode64("FOwbMI7CxUqcNmW6LUB93MuTQeS8sfTi40eoSl8BUYQ=") %>
-  expiration: <%= Time.now.advance(:hours=>24).to_s :db %>
+  lifetime: <%= 24.hours.to_i %>
   created_at: <%= 2.hours.ago.to_s :db %>
 
-sha256-expired:
+assoc_sha256_expired:
   id: 2
   handle: <%= 'sha256-expired' %>
   encryption_type: HMAC-SHA256
   secret: <%= Base64.decode64("FOwbMI7CxUqcNmW6LUB93MuTQeS8sfTi40eoSl8BUYQ=") %>
-  expiration: <%= 1.second.ago.to_s :db %>
+  lifetime: <%= 1.hour.to_i %>
   created_at: <%= 2.hours.ago.to_s :db %>
