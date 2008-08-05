@@ -7,7 +7,11 @@ class OpenidAssociation < ActiveRecord::Base
         :handle => response[:assoc_handle],
         :encryption_type => response[:assoc_type],
         :secret => response[:secret],
-        :expiration => Time.now.utc + response[:expires_in].to_i
+        :lifetime => response[:expires_in].to_i
     end
+  end
+  
+  def expired?
+    created_at + lifetime < Time.now
   end
 end

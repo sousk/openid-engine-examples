@@ -21,18 +21,31 @@ describe SessionsController do
         :session_type => 'DH-SHA256'
       })
       controller.stub!(:rp).and_return(@rp)
+      controller.stub!(:openid_request?).and_return true
+    end
+    
+    describe "#process_openid_request" do
+      it "should start openid authentication when openid_identifier passed" do
+        controller.should_receive(:start_openid_authentication)
+        post :create, :openid_identifier => 'http://example.com/user_supplied_id'
+      end
+      
+      it "should process assertion when positive/negative assertion passed" do
+        controller.should_receive(:process_assertion)
+        get :show, 'openid.mode' => 'id_res'
+      end
     end
     
     describe "#start_openid_authentication" do
-
+    
       def do_post
         post :create, :openid_identifier => 'http://example.com/user_supplied_id'
       end
       
       def mock_discovery
-        @rp.should_receive(:discover_by_yadis).and_return [SERVICE_SERVER]
+        @rp.stub!(:discover_by_yadis).and_return [SERVICE_SERVER]
       end
-
+    
       it "should do nothing no service found" do
         @rp.should_receive(:discover).and_return []
         controller.should_not_receive(:get_association)
@@ -40,10 +53,10 @@ describe SessionsController do
         do_post
         response.should be_success
       end
-
+    
       it "should use stored association" do
         mock_discovery
-        assoc = openid_associations(:localhost)
+        assoc = openid_associations(:localhost_sha256)
         controller.should_receive(:get_association).and_return(assoc)
         do_post
         response.should be_redirect

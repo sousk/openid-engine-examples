@@ -4,7 +4,7 @@ class CreateOpenidAssociations < ActiveRecord::Migration
       t.string :op_endpoint
       t.string :handle, :encryption_type, :null => false
       t.binary :secret, :null => false
-      t.datetime :expiration, :null => false
+      t.integer    :lifetime, :null => false
       
       t.timestamps
     end
