@@ -28,8 +28,7 @@ require File.dirname(__FILE__) + '/../openid_helper'
 
 describe ServersController do
   include OpenidEngine
-  include OpenidHelper
-  fixtures :openid_associations
+  fixtures :openid_associations, :users
 
   it {
     controller.should be_kind_of(ServersController)
@@ -55,25 +54,35 @@ describe ServersController do
       Array(hash).each { |k,v| @params[k] = v }
     end
     
-    def mock_op
+    
+    def prepare_mocks
       mock_params 'openid.assoc_handle' => 'sha256'
-      
       @assocs = Object.new
       @assocs.stub!(:find_by_handle).and_return openid_associations(:assoc_sha256)
-      @op = OpenidEngine::Op.new :assoc_storage => @assocs
       
+      @op = OpenidEngine::Op.new :assoc_storage => @assocs
       controller.stub!(:op).and_return @op
+      
+      controller.stub!(:current_user).and_return users(:quentin)
+      controller.stub!(:server_url).and_return('http://example.com/server_url')
+      controller.stub!(:user_url).and_return('http://example.com/user_url')
     end
     
     describe "#process_checkid_request" do
       before(:each) do
         mock_params 'openid.return_to' => @return_to, 'openid.realm' => @realm
+        prepare_mocks
       end
       
-      it "should return positive assertion" do
-        mock_op
+      it "should verify return_to against realm if return_to passed" do
+        @params['openid.return_to'] = @return_to
+        @params['openid.realm'] = @realm
+        
+        @op.should_receive(:verify_return_to_against_realm)
+        controller.should_receive(:indirect_response)
         controller.process_checkid_request
       end
+      
     end
   end
   
@@ -130,8 +139,6 @@ describe ServersController do
   #     puts response.body
   #   end
   # end
-  
-  
   
   # describe "GET /server" do
   #   
