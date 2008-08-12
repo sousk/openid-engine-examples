@@ -2,7 +2,7 @@ require "base64"
 
 class OpenidAssociation < ActiveRecord::Base
   class << self
-    def new_from_response(endpoint, response)
+    def new_from_response(endpoint, response) #FIXME should be obsoleted
       new :op_endpoint => endpoint,
         :handle => response[:assoc_handle],
         :encryption_type => response[:assoc_type],
@@ -11,7 +11,7 @@ class OpenidAssociation < ActiveRecord::Base
     end
   end
   
-  def expired?
+  def expired? #FIXME should be obsoleted
     created_at + lifetime < Time.now
   end
 end

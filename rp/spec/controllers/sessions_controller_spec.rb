@@ -15,11 +15,7 @@ describe SessionsController do
     before(:each) do
       @identifier = 'http://localhost:3000/'
       @endpoint = 'http://localhost:3000/servers'
-      @rp = OpenidEngine::Rp.new({
-        :ns => OpenidEngine::TYPE[:ns],
-        :assoc_type => 'HMAC-SHA256',
-        :session_type => 'DH-SHA256'
-      })
+      @rp = OpenidEngine::Rp.new
       controller.stub!(:rp).and_return(@rp)
       controller.stub!(:openid_request?).and_return true
     end
