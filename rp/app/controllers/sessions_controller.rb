@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
     if openid_request?
       openid_authentication
     else
-      password_authentication unless openid_request?
+      password_authentication
     end
   end
   
@@ -33,7 +33,14 @@ class SessionsController < ApplicationController
   private
   def openid_authentication
     $LOGGER = logger
-    process_openid_request :return_to => session_url
+    process_openid_request(:return_to => session_url) do |openid|
+      if openid.authorized?
+        current_user = User.find_by_claimed_id openid.claimed_id
+      else
+        flash[:notice] = openid.messages.join(",")
+        render :action => 'new'
+      end
+    end
   end
   
   def password_authentication
