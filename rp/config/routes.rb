@@ -1,6 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
+  
   map.resources :users, :accounts
-  map.resource :session
+  map.resource :session, :collection => {:openid => :get}
   
   map.login '/login', :controller => 'sessions', :action => 'new'
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'

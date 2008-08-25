@@ -22,13 +22,13 @@ describe SessionsController do
     
     describe "#process_openid_request" do
       it "should start openid authentication when openid_identifier passed" do
-        controller.should_receive(:start_openid_authentication)
+        controller.should_receive(:begin_openid_authentication)
         post :create, :openid_identifier => 'http://example.com/user_supplied_id'
       end
       
       it "should process assertion when positive/negative assertion passed" do
-        controller.should_receive(:process_assertion)
-        get :show, 'openid.mode' => 'id_res'
+        controller.should_receive(:complete_openid_authentication)
+        get :create, 'openid.mode' => 'id_res'
       end
     end
     

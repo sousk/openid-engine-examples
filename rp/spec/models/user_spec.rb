@@ -6,7 +6,13 @@ include AuthenticatedTestHelper
 
 describe User do
   fixtures :users
-
+  
+  describe "associated with OpenID accounts" do
+    it "should have openid accounts" do
+      User.new.should respond_to(:openid_accounts)
+    end
+  end
+  
   describe 'being created' do
     before do
       @user = nil

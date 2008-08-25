@@ -1,7 +1,12 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  claimed_id: MyString
-
+quentin:
+  id: 1
+  claimed_id: localhost
+  identity: 1
+  # user: quentin
+  user_id: 1
 two:
-  claimed_id: MyString
+  id: 2
+  claimed_id: localhost
+  identity: 2
